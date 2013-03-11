@@ -5,6 +5,10 @@ var xml = require("util/xml2json");
 var WeiXin = require('./wx');
 
 http.createServer(function (req, res) {
+	var response = function(code,msg){
+		res.writeHead(code,{'Content-Type':'text/html'});
+		res.end(msg);
+	}
 	var reqMethod = req.method.toUpperCase();
 	var isForbid = true;
 	if(reqMethod == 'GET'){
@@ -45,8 +49,3 @@ http.createServer(function (req, res) {
 		response(403,'something is wrong!');
 	}
 }).listen(process.env.PORT || 5000, null);
-
-function response(res,code,msg){
-	res.writeHead(code,{'Content-Type':'text/html'});
-	res.end(msg);
-}
