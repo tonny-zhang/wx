@@ -36,11 +36,11 @@ var req = http.request({
 // '<MsgId>1234567890123456</MsgId>'+
 // '</xml> ');
 
-req.write('<xml><ToUserName><![CDATA[gh_8f47ec7c055d]]></ToUserName>'+
-			'<FromUserName><![CDATA[o7fAGj-j4y-Ey5nvTTE1Z9wwyCY4]]></FromUserName>'+
-			'<CreateTime>1362986469</CreateTime>'+
-			'<MsgType><![CDATA[text]]></MsgType>'+
-			'<Content><![CDATA[A]]></Content>'+
-			'<MsgId>5853982309245517843</MsgId>'+
+req.write('<xml><ToUserName><![CDATA[gh_8f47ec7c055d]]></ToUserName>\n'+
+			'<FromUserName><![CDATA[o7fAGj-j4y-Ey5nvTTE1Z9wwyCY4]]></FromUserName>\n'+
+			'<CreateTime>1362986469</CreateTime>\n'+
+			'<MsgType><![CDATA[text]]></MsgType>\n'+
+			'<Content><![CDATA[A]]></Content>\n'+
+			'<MsgId>5853982309245517843</MsgId>\n'+
 			'</xml>');
 req.end();
