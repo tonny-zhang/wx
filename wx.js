@@ -7,8 +7,8 @@ WeiXin.prototype.textTmpl = function(content){
 	var ToUserName = root.ToUserName;
 	var FromUserName = root.FromUserName;
 	return '<xml>'+
-				'<ToUserName><![CDATA['+ToUserName+']]></ToUserName>\n'+
-				'<FromUserName><![CDATA['+FromUserName+']]></FromUserName>\n'+
+				'<ToUserName><![CDATA['+FromUserName+']]></ToUserName>\n'+
+				'<FromUserName><![CDATA['+ToUserName+']]></FromUserName>\n'+
 				'<CreateTime>'+(+new Date())+'</CreateTime>\n'+
 				'<MsgType><![CDATA[text]]></MsgType>\n'+
 				'<Content><![CDATA['+content+']]></Content>\n'+
