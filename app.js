@@ -35,7 +35,7 @@ http.createServer(function (req, res) {
 				});
 				req.on('end',function(){
 					xml.parse2Json(message,function(err,result){
-						log('POST_XML',JSON.stringify(err||result));
+						log('POST_XML',message,JSON.stringify(err||result));
 						if(!err){
 							var weiXin = new WeiXin(result);
 							switch(result.MsgType){
@@ -48,7 +48,7 @@ http.createServer(function (req, res) {
 						}else{
 							response(500,'parse xml error!');
 						}
-					})
+					},true)
 				});
 			}
 		}else{
