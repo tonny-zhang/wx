@@ -14,7 +14,8 @@ http.createServer(function (req, res) {
 	if(reqMethod == 'GET'){
 		if(~req.url.indexOf('?')){
 			var params = url.parse(req.url,true).query;
-			var sha1Str = [params.nonce,params.timestamp,'tonnyzhang'].sort().join();
+			var sha1Str = [params.nonce,params.timestamp,'tonnyzhang'].sort().join('');
+
 			var signature = crypto.createHash('sha1').update(sha1Str).digest('hex');
 			
 			if(params.signature == signature){
