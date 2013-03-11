@@ -7,12 +7,12 @@ WeiXin.prototype.textTmpl = function(content){
 	var ToUserName = root.ToUserName;
 	var FromUserName = root.FromUserName;
 	return '<xml>'+
-				'<ToUserName><![CDATA['+FromUserName+']]></ToUserName>\n'+
-				'<FromUserName><![CDATA['+ToUserName+']]></FromUserName>\n'+
-				'<CreateTime>'+(+new Date())+'</CreateTime>\n'+
-				'<MsgType><![CDATA[text]]></MsgType>\n'+
-				'<Content><![CDATA['+content+']]></Content>\n'+
-				'<FuncFlag>0</FuncFlag>\n'+
+				'<ToUserName><![CDATA['+FromUserName+']]></ToUserName>'+
+				'<FromUserName><![CDATA['+ToUserName+']]></FromUserName>'+
+				'<CreateTime>'+(+new Date())+'</CreateTime>'+
+				'<MsgType><![CDATA[text]]></MsgType>'+
+				'<Content><![CDATA['+content+']]></Content>'+
+				'<FuncFlag>0</FuncFlag>'+
 			'</xml>';
 }
 module.exports = WeiXin;
