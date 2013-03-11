@@ -44,6 +44,7 @@ http.createServer(function (req, res) {
 								default:
 							}
 							var res_xml = weiXin.textTmpl('这是一个测试');
+							log('RES_XML',res_xml);
 							response(200,res_xml);
 						}else{
 							response(500,'parse xml error!');
