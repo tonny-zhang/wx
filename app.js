@@ -3,14 +3,18 @@ var url = require('url');
 var crypto = require('crypto');
 var xml = require("util/xml2json");
 var WeiXin = require('./wx');
+var log = require('util/logger').log;
+var fs = require('fs');
 
 http.createServer(function (req, res) {
 	var response = function(code,msg){
+		log(reqMethod,req.url);
 		res.writeHead(code,{'Content-Type':'text/html'});
 		res.end(msg);
 	}
 	var reqMethod = req.method.toUpperCase();
 	var isForbid = true;
+	
 	if(reqMethod == 'GET'){
 		if(~req.url.indexOf('?')){
 			var params = url.parse(req.url,true).query;
@@ -22,6 +26,11 @@ http.createServer(function (req, res) {
 				response(200,params.echostr);
 				isForbid = false;
 			}
+		}
+		if(req.url == '/log.txt'){
+			var content = fs.readFileSync('./log.txt');
+			response(200,content);
+			isForbid = false;
 		}
 	}else if(reqMethod == 'POST'){
 		var message = '';
