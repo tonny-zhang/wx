@@ -49,6 +49,7 @@ wxProp.parseText = function(callback){
 	var replyContent = '';
 	switch(content){
 		case 'Hello2BizUser':
+			replyContent = helper.welcome + '\n' + helper.help;
 		case 'h':
 		case 'help':
 			replyContent = helper.welcome;
@@ -70,7 +71,7 @@ wxProp.parseText = function(callback){
 					callback && callback(null, '请输入要查询天气的城市,如：tq北京,北京天气');
 				}
 			}else{
-				replyContent = '您输入的「'+content+'」我不知道什么意思,下面的信息可能会帮到您\n\n'+helper.welcome;
+				replyContent = '您输入的「'+content+'」我不知道什么意思,下面的信息可能会帮到您\n\n'+helper.help;
 			}
 			
 	}
