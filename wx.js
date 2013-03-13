@@ -1,11 +1,13 @@
 var weather = require('./data/weather/weatherInfo');
 var helper = require('./data/helper');
+var getTags = require('./data/fdx/tag.js').getTags;
 
 function WeiXin(fromInfo){
 	var root = this.root = fromInfo.xml.child;
 	this.ToUserName = root.ToUserName.text;
 	this.FromUserName = root.FromUserName.text;
 }
+WeiXin.showTag = true;
 var wxProp = WeiXin.prototype;
 //发送文本
 wxProp.textTmpl = function(content){
@@ -44,6 +46,7 @@ wxProp.newsTmpl = function(news){
 		xml += '</Articles>'+
 				'<FuncFlag>1</FuncFlag>'+
 			'</xml> ';
+	return xml;
 }
 wxProp.parseText = function(callback){
 	var _this = this;
@@ -80,10 +83,32 @@ wxProp.parseText = function(callback){
 	replyContent && callback && callback(null,_this.textTmpl(replyContent));
 }
 wxProp._parseWeatherResult = function(err,weatherInfo,callback){
+	var _this = this;
 	if(err){
 		callback && callback(err);
 	}else{
-		callback && callback(null,this.textTmpl([weatherInfo.city,weatherInfo.weather1,weatherInfo.temp1].join(' ')));
+		var weatherText = [weatherInfo.city,weatherInfo.weather1,weatherInfo.temp1].join(' ');
+		if(callback){
+			if(WeiXin.showTag){
+				getTags(weatherInfo.cityid,function(err,infoArr){
+					var arr = [{title:weatherText,desc:'天气描述',picUrl:'https://devcenter.heroku.com/assets/public/heroku-header-logo.png',url:'http://www.fandongxi.com'}]
+					infoArr.forEach(function(v,i){
+						arr.push({title:v.tag.name,desc:v.tag.name+'desc',picUrl:v.imgs[0].src,'url':v.tag.href});
+					});
+					callback(null,_this.newsTmpl(arr));
+				});
+			}else{
+				callback(null,_this.textTmpl(weatherText));
+			}
+		}
+		// var res = WeiXin.showTag ?
+		// 			this.textTmpl(weatherText):
+		// 			this.newsTmpl([{
+		// 				title: weatherText,
+		// 				desc: '-desc',
+		// 				picUrl: 
+		// 			}]);
+		// callback && callback(null,);
 	}
 }
 wxProp.parseLocation = function(callback){

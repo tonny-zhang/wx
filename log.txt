@@ -1,0 +1,59 @@
+2013-03-13 18:43:49	POST	/?nonce=test&timestamp=1363171429162&signature=efaac3f8c2ad10bf7362b678cd9556d4f1048760	
+2013-03-13 18:43:49	POST_XML	<xml><ToUserName><![CDATA[gh_8f47ec7c055d]]></ToUserName>
+<FromUserName><![CDATA[o7fAGj-j4y-Ey5nvTTE1Z9wwyCY4]]></FromUserName>
+<CreateTime>1362986469</CreateTime>
+<MsgType><![CDATA[text]]></MsgType>
+<Content><![CDATA[tq丰台区]]></Content>
+<MsgId>5853982309245517843</MsgId>
+</xml>	{"xml":{"text":"","attrs":{},"child":{"ToUserName":{"text":"gh_8f47ec7c055d","attrs":{},"child":{}},"FromUserName":{"text":"o7fAGj-j4y-Ey5nvTTE1Z9wwyCY4","attrs":{},"child":{}},"CreateTime":{"text":"1362986469","attrs":{},"child":{}},"MsgType":{"text":"text","attrs":{},"child":{}},"Content":{"text":"tq丰台区","attrs":{},"child":{}},"MsgId":{"text":"5853982309245517843","attrs":{},"child":{}}}}}	
+2013-03-13 18:43:49	POST	/?nonce=test&timestamp=1363171429162&signature=efaac3f8c2ad10bf7362b678cd9556d4f1048760	200	<xml><ToUserName><![CDATA[o7fAGj-j4y-Ey5nvTTE1Z9wwyCY4]]></ToUserName><FromUserName><![CDATA[gh_8f47ec7c055d]]></FromUserName><CreateTime>1363171429901</CreateTime><MsgType><![CDATA[text]]></MsgType><Content><![CDATA[丰台 晴转多云 -2℃~11℃]]></Content><FuncFlag>0</FuncFlag></xml>	
+2013-03-13 18:44:20	POST	/?nonce=test&timestamp=1363171460585&signature=07938e5a64dbcbb59296cb79e85458e928d1295a	
+2013-03-13 18:44:20	POST_XML	<xml><ToUserName><![CDATA[gh_8f47ec7c055d]]></ToUserName>
+<FromUserName><![CDATA[o7fAGj-j4y-Ey5nvTTE1Z9wwyCY4]]></FromUserName>
+<CreateTime>1362986469</CreateTime>
+<MsgType><![CDATA[text]]></MsgType>
+<Content><![CDATA[tq丰台区]]></Content>
+<MsgId>5853982309245517843</MsgId>
+</xml>	{"xml":{"text":"","attrs":{},"child":{"ToUserName":{"text":"gh_8f47ec7c055d","attrs":{},"child":{}},"FromUserName":{"text":"o7fAGj-j4y-Ey5nvTTE1Z9wwyCY4","attrs":{},"child":{}},"CreateTime":{"text":"1362986469","attrs":{},"child":{}},"MsgType":{"text":"text","attrs":{},"child":{}},"Content":{"text":"tq丰台区","attrs":{},"child":{}},"MsgId":{"text":"5853982309245517843","attrs":{},"child":{}}}}}	
+2013-03-13 18:44:52	POST	/?nonce=test&timestamp=1363171491819&signature=7c72f0402cf67a822588c14f22e5adb49aa48218	
+2013-03-13 18:44:52	POST_XML	<xml><ToUserName><![CDATA[gh_8f47ec7c055d]]></ToUserName>
+<FromUserName><![CDATA[o7fAGj-j4y-Ey5nvTTE1Z9wwyCY4]]></FromUserName>
+<CreateTime>1362986469</CreateTime>
+<MsgType><![CDATA[text]]></MsgType>
+<Content><![CDATA[tq丰台区]]></Content>
+<MsgId>5853982309245517843</MsgId>
+</xml>	{"xml":{"text":"","attrs":{},"child":{"ToUserName":{"text":"gh_8f47ec7c055d","attrs":{},"child":{}},"FromUserName":{"text":"o7fAGj-j4y-Ey5nvTTE1Z9wwyCY4","attrs":{},"child":{}},"CreateTime":{"text":"1362986469","attrs":{},"child":{}},"MsgType":{"text":"text","attrs":{},"child":{}},"Content":{"text":"tq丰台区","attrs":{},"child":{}},"MsgId":{"text":"5853982309245517843","attrs":{},"child":{}}}}}	
+2013-03-13 18:46:01	POST	/?nonce=test&timestamp=1363171561349&signature=f08d1a81e27a8d726289d62116bd605df0fd1680	
+2013-03-13 18:46:01	POST_XML	<xml><ToUserName><![CDATA[gh_8f47ec7c055d]]></ToUserName>
+<FromUserName><![CDATA[o7fAGj-j4y-Ey5nvTTE1Z9wwyCY4]]></FromUserName>
+<CreateTime>1362986469</CreateTime>
+<MsgType><![CDATA[text]]></MsgType>
+<Content><![CDATA[tq丰台区]]></Content>
+<MsgId>5853982309245517843</MsgId>
+</xml>	{"xml":{"text":"","attrs":{},"child":{"ToUserName":{"text":"gh_8f47ec7c055d","attrs":{},"child":{}},"FromUserName":{"text":"o7fAGj-j4y-Ey5nvTTE1Z9wwyCY4","attrs":{},"child":{}},"CreateTime":{"text":"1362986469","attrs":{},"child":{}},"MsgType":{"text":"text","attrs":{},"child":{}},"Content":{"text":"tq丰台区","attrs":{},"child":{}},"MsgId":{"text":"5853982309245517843","attrs":{},"child":{}}}}}	
+2013-03-13 18:46:50	POST	/?nonce=test&timestamp=1363171610240&signature=cf446bf7e5f4f39097c37fbcac19d3e883cf9b61	
+2013-03-13 18:46:50	POST_XML	<xml><ToUserName><![CDATA[gh_8f47ec7c055d]]></ToUserName>
+<FromUserName><![CDATA[o7fAGj-j4y-Ey5nvTTE1Z9wwyCY4]]></FromUserName>
+<CreateTime>1362986469</CreateTime>
+<MsgType><![CDATA[text]]></MsgType>
+<Content><![CDATA[tq丰台区]]></Content>
+<MsgId>5853982309245517843</MsgId>
+</xml>	{"xml":{"text":"","attrs":{},"child":{"ToUserName":{"text":"gh_8f47ec7c055d","attrs":{},"child":{}},"FromUserName":{"text":"o7fAGj-j4y-Ey5nvTTE1Z9wwyCY4","attrs":{},"child":{}},"CreateTime":{"text":"1362986469","attrs":{},"child":{}},"MsgType":{"text":"text","attrs":{},"child":{}},"Content":{"text":"tq丰台区","attrs":{},"child":{}},"MsgId":{"text":"5853982309245517843","attrs":{},"child":{}}}}}	
+2013-03-13 18:47:12	POST	/?nonce=test&timestamp=1363171632585&signature=0ab830ba97ede1bd0479713e9ae6ef0ab899ba64	
+2013-03-13 18:47:12	POST_XML	<xml><ToUserName><![CDATA[gh_8f47ec7c055d]]></ToUserName>
+<FromUserName><![CDATA[o7fAGj-j4y-Ey5nvTTE1Z9wwyCY4]]></FromUserName>
+<CreateTime>1362986469</CreateTime>
+<MsgType><![CDATA[text]]></MsgType>
+<Content><![CDATA[tq丰台区]]></Content>
+<MsgId>5853982309245517843</MsgId>
+</xml>	{"xml":{"text":"","attrs":{},"child":{"ToUserName":{"text":"gh_8f47ec7c055d","attrs":{},"child":{}},"FromUserName":{"text":"o7fAGj-j4y-Ey5nvTTE1Z9wwyCY4","attrs":{},"child":{}},"CreateTime":{"text":"1362986469","attrs":{},"child":{}},"MsgType":{"text":"text","attrs":{},"child":{}},"Content":{"text":"tq丰台区","attrs":{},"child":{}},"MsgId":{"text":"5853982309245517843","attrs":{},"child":{}}}}}	
+2013-03-13 18:47:13	POST	/?nonce=test&timestamp=1363171632585&signature=0ab830ba97ede1bd0479713e9ae6ef0ab899ba64	200		
+2013-03-13 18:48:01	POST	/?nonce=test&timestamp=1363171681726&signature=faaeaa984656364d6d71e6d1a06276b3ec44330e	
+2013-03-13 18:48:01	POST_XML	<xml><ToUserName><![CDATA[gh_8f47ec7c055d]]></ToUserName>
+<FromUserName><![CDATA[o7fAGj-j4y-Ey5nvTTE1Z9wwyCY4]]></FromUserName>
+<CreateTime>1362986469</CreateTime>
+<MsgType><![CDATA[text]]></MsgType>
+<Content><![CDATA[tq丰台区]]></Content>
+<MsgId>5853982309245517843</MsgId>
+</xml>	{"xml":{"text":"","attrs":{},"child":{"ToUserName":{"text":"gh_8f47ec7c055d","attrs":{},"child":{}},"FromUserName":{"text":"o7fAGj-j4y-Ey5nvTTE1Z9wwyCY4","attrs":{},"child":{}},"CreateTime":{"text":"1362986469","attrs":{},"child":{}},"MsgType":{"text":"text","attrs":{},"child":{}},"Content":{"text":"tq丰台区","attrs":{},"child":{}},"MsgId":{"text":"5853982309245517843","attrs":{},"child":{}}}}}	
+2013-03-13 18:48:02	POST	/?nonce=test&timestamp=1363171681726&signature=faaeaa984656364d6d71e6d1a06276b3ec44330e	200	<xml><ToUserName><![CDATA[o7fAGj-j4y-Ey5nvTTE1Z9wwyCY4]]></ToUserName><FromUserName><![CDATA[gh_8f47ec7c055d]]></FromUserName><CreateTime>1363171682250</CreateTime><MsgType><![CDATA[news]]></MsgType><ArticleCount>9</ArticleCount><Articles><item><Title><![CDATA[丰台 晴转多云 -2℃~11℃]]></Title> <Description><![CDATA[天气描述]]></Description><PicUrl><![CDATA[https://devcenter.heroku.com/assets/public/heroku-header-logo.png]]></PicUrl><Url><![CDATA[http://www.fandongxi.com]]></Url></item><item><Title><![CDATA[运动裤]]></Title> <Description><![CDATA[运动裤desc]]></Description><PicUrl><![CDATA[http:/img.fandongxi.com/f/EAwMCEJXVxEVH0hJVgwZFxoZFxscFlYbFxVXGhkXVw0IFBcZHB0cVxFJVyxJSx4eKSASSCAgICApFjdPQCdJSElJTEhWEggf/132_88_c.jpg]]></PicUrl><Url><![CDATA[/tag/2415]]></Url></item><item><Title><![CDATA[条纹]]></Title> <Description><![CDATA[条纹desc]]></Description><PicUrl><![CDATA[http:/img.fandongxi.com/f/EAwMCEJXVxEVH0hKVgwZFxoZFxscFlYbFxVXGhkXVw0IFBcZHB0cVxFKVyxJHQtKLiASFCAgIBsKNRxWTidITklLS09WEggf/132_88_c.jpg]]></PicUrl><Url><![CDATA[/tag/2085]]></Url></item><item><Title><![CDATA[针织衫]]></Title> <Description><![CDATA[针织衫desc]]></Description><PicUrl><![CDATA[http:/img.fandongxi.com/f/EAwMCEJXVxEVH0hLVgwZFxoZFxscFlYbFxVXGhkXVw0IFBcZHB0cVxFLV0lPS0BJSEpISE1LSUFLS0xBVyxJNiscOSABACAgICAgICAgICdZWUhVEQwdFScIERtWEggf/132_88_c.jpg]]></PicUrl><Url><![CDATA[/tag/2134]]></Url></item><item><Title><![CDATA[家居服]]></Title> <Description><![CDATA[家居服desc]]></Description><PicUrl><![CDATA[http:/img.fandongxi.com/f/EAwMCEJXVxEVH0hJVgwZFxoZFxscFlYbFxVXGhkXVw0IFBcZHB0cVxFJVyxJICAnKSAZFBcgIBswKS8aICdJSUtATUxWEggf/132_88_c.jpg]]></PicUrl><Url><![CDATA[/tag/2189]]></Url></item><item><Title><![CDATA[麻花]]></Title> <Description><![CDATA[麻花desc]]></Description><PicUrl><![CDATA[http:/img.fandongxi.com/f/EAwMCEJXVxEVH0hKVgwZFxoZFxscFlYbFxVXGhkXVw0IFBcZHB0cVxFKVyxJMQEsLyATSBwgIBsyPDE5TidITklJS09WEggf/132_88_c.jpg]]></PicUrl><Url><![CDATA[/tag/2275]]></Url></item><item><Title><![CDATA[牛仔裤]]></Title> <Description><![CDATA[牛仔裤desc]]></Description><PicUrl><![CDATA[http:/img.fandongxi.com/f/EAwMCEJXVxEVH0hJVgwZFxoZFxscFlYbFxVXGhkXVw0IFBcZHB0cVxFJV0lPQU1JSEpISE1PTE5JS05BVyxJCx0cOSAOOhogICAgICAgICdZWUhVEQwdFScIERtWEggf/132_88_c.jpg]]></PicUrl><Url><![CDATA[/tag/2036]]></Url></item><item><Title><![CDATA[棉服]]></Title> <Description><![CDATA[棉服desc]]></Description><PicUrl><![CDATA[http:/img.fandongxi.com/f/EAwMCEJXVxEVH0hKVgwZFxoZFxscFlYbFxVXGhkXVw0IFBcZHB0cVxFKVyxJDkkaMSAZSBUgIBkhCUw1VidJSUpNSElWEggf/132_88_c.jpg]]></PicUrl><Url><![CDATA[/tag/2186]]></Url></item><item><Title><![CDATA[帽衫]]></Title> <Description><![CDATA[帽衫desc]]></Description><PicUrl><![CDATA[http:/img.fandongxi.com/f/EAwMCEJXVxEVH0hMVgwZFxoZFxscFlYbFxVXGhkXVw0IFBcZHB0cVxFMV0lOTUFPSEpISkpLTkBBQU1AVyxJEDoqPSA7PhsgICAgICAgICdZWUhVEQwdFScIERtWEggf/132_88_c.jpg]]></PicUrl><Url><![CDATA[/tag/2082]]></Url></item></Articles><FuncFlag>1</FuncFlag></xml> 	
