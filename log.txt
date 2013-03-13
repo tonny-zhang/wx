@@ -1,6 +1,73 @@
-2013-03-11 15:23:25	GET	/favicon.ico	
-2013-03-11 15:23:26	GET	/favicon.ico	
-2013-03-11 15:23:29	GET	/favicon.ico	
-2013-03-11 15:23:30	GET	/favicon.ico	
-2013-03-11 15:23:32	GET	/favicon.ico	
-2013-03-11 15:23:33	GET	/favicon.ico	
+2013-03-13 16:51:34	POST	/?nonce=test&timestamp=1363164694412&signature=1acb9b8d57457d79f97090b3c735544110fe6f8b	
+2013-03-13 16:51:34	POST_XML	<xml><ToUserName><![CDATA[gh_8f47ec7c055d]]></ToUserName>
+<FromUserName><![CDATA[o7fAGj-j4y-Ey5nvTTE1Z9wwyCY4]]></FromUserName>
+<CreateTime>1362986469</CreateTime>
+<MsgType><![CDATA[text]]></MsgType>
+<Content><![CDATA[A]]></Content>
+<MsgId>5853982309245517843</MsgId>
+</xml>	{"xml":{"text":"","attrs":{},"child":{"ToUserName":{"text":"gh_8f47ec7c055d","attrs":{},"child":{}},"FromUserName":{"text":"o7fAGj-j4y-Ey5nvTTE1Z9wwyCY4","attrs":{},"child":{}},"CreateTime":{"text":"1362986469","attrs":{},"child":{}},"MsgType":{"text":"text","attrs":{},"child":{}},"Content":{"text":"A","attrs":{},"child":{}},"MsgId":{"text":"5853982309245517843","attrs":{},"child":{}}}}}	
+2013-03-13 16:51:34	RES_XML	您输入的「A」我不知道什么意思	
+2013-03-13 16:53:30	POST	/?nonce=test&timestamp=1363164810522&signature=b8d47ad4a1db14bd787b257ae691532faddd35e3	
+2013-03-13 16:53:30	POST_XML	<xml><ToUserName><![CDATA[gh_8f47ec7c055d]]></ToUserName><FromUserName><![CDATA[o7fAGj-j4y-Ey5nvTTE1Z9wwyCY4]]></FromUserName><CreateTime>1363159184</CreateTime><MsgType><![CDATA[text]]></MsgType><Content><![CDATA[Hello2BizUser]]></Content><MsgId>5854724114522046464</MsgId></xml>	{"xml":{"text":"","attrs":{},"child":{"ToUserName":{"text":"gh_8f47ec7c055d","attrs":{},"child":{}},"FromUserName":{"text":"o7fAGj-j4y-Ey5nvTTE1Z9wwyCY4","attrs":{},"child":{}},"CreateTime":{"text":"1363159184","attrs":{},"child":{}},"MsgType":{"text":"text","attrs":{},"child":{}},"Content":{"text":"Hello2BizUser","attrs":{},"child":{}},"MsgId":{"text":"5854724114522046464","attrs":{},"child":{}}}}}	
+2013-03-13 16:53:30	RES_XML	热烈欢迎
+以下为输出帮助：
+1.h[help] 得到帮助信息
+2.天气[tq|TQ] 查询天气请问	
+2013-03-13 16:55:02	POST	/?nonce=test&timestamp=1363164902710&signature=839f27879aea904ea5a180eb9b7de3218753a65a	
+2013-03-13 16:55:02	POST_XML	<xml><ToUserName><![CDATA[gh_8f47ec7c055d]]></ToUserName><FromUserName><![CDATA[o7fAGj-j4y-Ey5nvTTE1Z9wwyCY4]]></FromUserName><CreateTime>1363159225</CreateTime><MsgType><![CDATA[location]]></MsgType><Location_X>40.032572</Location_X><Location_Y>116.417331</Location_Y><Scale>15</Scale><Label><![CDATA[中国北京市朝阳区红军营南路 邮政编码: 100107]]></Label><MsgId>5854724290615705652</MsgId></xml>	{"xml":{"text":"","attrs":{},"child":{"ToUserName":{"text":"gh_8f47ec7c055d","attrs":{},"child":{}},"FromUserName":{"text":"o7fAGj-j4y-Ey5nvTTE1Z9wwyCY4","attrs":{},"child":{}},"CreateTime":{"text":"1363159225","attrs":{},"child":{}},"MsgType":{"text":"location","attrs":{},"child":{}},"Location_X":{"text":"40.032572","attrs":{},"child":{}},"Location_Y":{"text":"116.417331","attrs":{},"child":{}},"Scale":{"text":"15","attrs":{},"child":{}},"Label":{"text":"中国北京市朝阳区红军营南路 邮政编码: 100107","attrs":{},"child":{}},"MsgId":{"text":"5854724290615705652","attrs":{},"child":{}}}}}	
+2013-03-13 16:56:06	POST	/?nonce=test&timestamp=1363164965897&signature=6ec6b0cde57681028a40a3a85d146ae248190e40	
+2013-03-13 16:56:06	POST_XML	<xml><ToUserName><![CDATA[gh_8f47ec7c055d]]></ToUserName><FromUserName><![CDATA[o7fAGj-j4y-Ey5nvTTE1Z9wwyCY4]]></FromUserName><CreateTime>1363159225</CreateTime><MsgType><![CDATA[location]]></MsgType><Location_X>40.032572</Location_X><Location_Y>116.417331</Location_Y><Scale>15</Scale><Label><![CDATA[中国北京市朝阳区红军营南路 邮政编码: 100107]]></Label><MsgId>5854724290615705652</MsgId></xml>	{"xml":{"text":"","attrs":{},"child":{"ToUserName":{"text":"gh_8f47ec7c055d","attrs":{},"child":{}},"FromUserName":{"text":"o7fAGj-j4y-Ey5nvTTE1Z9wwyCY4","attrs":{},"child":{}},"CreateTime":{"text":"1363159225","attrs":{},"child":{}},"MsgType":{"text":"location","attrs":{},"child":{}},"Location_X":{"text":"40.032572","attrs":{},"child":{}},"Location_Y":{"text":"116.417331","attrs":{},"child":{}},"Scale":{"text":"15","attrs":{},"child":{}},"Label":{"text":"中国北京市朝阳区红军营南路 邮政编码: 100107","attrs":{},"child":{}},"MsgId":{"text":"5854724290615705652","attrs":{},"child":{}}}}}	
+2013-03-13 17:00:23	POST	/?nonce=test&timestamp=1363165223240&signature=39f5e4bd0ef03b29b4ac9df979df5cee4f92402c	
+2013-03-13 17:00:23	POST_XML	<xml><ToUserName><![CDATA[gh_8f47ec7c055d]]></ToUserName><FromUserName><![CDATA[o7fAGj-j4y-Ey5nvTTE1Z9wwyCY4]]></FromUserName><CreateTime>1363159225</CreateTime><MsgType><![CDATA[location]]></MsgType><Location_X>40.032572</Location_X><Location_Y>116.417331</Location_Y><Scale>15</Scale><Label><![CDATA[中国北京市朝阳区红军营南路 邮政编码: 100107]]></Label><MsgId>5854724290615705652</MsgId></xml>	{"xml":{"text":"","attrs":{},"child":{"ToUserName":{"text":"gh_8f47ec7c055d","attrs":{},"child":{}},"FromUserName":{"text":"o7fAGj-j4y-Ey5nvTTE1Z9wwyCY4","attrs":{},"child":{}},"CreateTime":{"text":"1363159225","attrs":{},"child":{}},"MsgType":{"text":"location","attrs":{},"child":{}},"Location_X":{"text":"40.032572","attrs":{},"child":{}},"Location_Y":{"text":"116.417331","attrs":{},"child":{}},"Scale":{"text":"15","attrs":{},"child":{}},"Label":{"text":"中国北京市朝阳区红军营南路 邮政编码: 100107","attrs":{},"child":{}},"MsgId":{"text":"5854724290615705652","attrs":{},"child":{}}}}}	
+2013-03-13 17:01:40	POST	/?nonce=test&timestamp=1363165300396&signature=165d1eb2005a47d0c15498bef438aad1ca40b155	
+2013-03-13 17:01:40	POST_XML	<xml><ToUserName><![CDATA[gh_8f47ec7c055d]]></ToUserName><FromUserName><![CDATA[o7fAGj-j4y-Ey5nvTTE1Z9wwyCY4]]></FromUserName><CreateTime>1363159225</CreateTime><MsgType><![CDATA[location]]></MsgType><Location_X>40.032572</Location_X><Location_Y>116.417331</Location_Y><Scale>15</Scale><Label><![CDATA[中国北京市朝阳区红军营南路 邮政编码: 100107]]></Label><MsgId>5854724290615705652</MsgId></xml>	{"xml":{"text":"","attrs":{},"child":{"ToUserName":{"text":"gh_8f47ec7c055d","attrs":{},"child":{}},"FromUserName":{"text":"o7fAGj-j4y-Ey5nvTTE1Z9wwyCY4","attrs":{},"child":{}},"CreateTime":{"text":"1363159225","attrs":{},"child":{}},"MsgType":{"text":"location","attrs":{},"child":{}},"Location_X":{"text":"40.032572","attrs":{},"child":{}},"Location_Y":{"text":"116.417331","attrs":{},"child":{}},"Scale":{"text":"15","attrs":{},"child":{}},"Label":{"text":"中国北京市朝阳区红军营南路 邮政编码: 100107","attrs":{},"child":{}},"MsgId":{"text":"5854724290615705652","attrs":{},"child":{}}}}}	
+2013-03-13 17:18:03	POST	/?nonce=test&timestamp=1363166283741&signature=b4eb04c57ff566e73efa7d33220521a45a543d02	
+2013-03-13 17:18:03	POST_XML	<xml><ToUserName><![CDATA[gh_8f47ec7c055d]]></ToUserName>
+<FromUserName><![CDATA[o7fAGj-j4y-Ey5nvTTE1Z9wwyCY4]]></FromUserName>
+<CreateTime>1362986469</CreateTime>
+<MsgType><![CDATA[text]]></MsgType>
+<Content><![CDATA[tq]]></Content>
+<MsgId>5853982309245517843</MsgId>
+</xml>	{"xml":{"text":"","attrs":{},"child":{"ToUserName":{"text":"gh_8f47ec7c055d","attrs":{},"child":{}},"FromUserName":{"text":"o7fAGj-j4y-Ey5nvTTE1Z9wwyCY4","attrs":{},"child":{}},"CreateTime":{"text":"1362986469","attrs":{},"child":{}},"MsgType":{"text":"text","attrs":{},"child":{}},"Content":{"text":"tq","attrs":{},"child":{}},"MsgId":{"text":"5853982309245517843","attrs":{},"child":{}}}}}	
+2013-03-13 17:19:40	POST	/?nonce=test&timestamp=1363166380475&signature=5ad9a81d06fdd3d82ca2e699509defd883af6fde	
+2013-03-13 17:19:40	POST_XML	<xml><ToUserName><![CDATA[gh_8f47ec7c055d]]></ToUserName>
+<FromUserName><![CDATA[o7fAGj-j4y-Ey5nvTTE1Z9wwyCY4]]></FromUserName>
+<CreateTime>1362986469</CreateTime>
+<MsgType><![CDATA[text]]></MsgType>
+<Content><![CDATA[tq朝阳]]></Content>
+<MsgId>5853982309245517843</MsgId>
+</xml>	{"xml":{"text":"","attrs":{},"child":{"ToUserName":{"text":"gh_8f47ec7c055d","attrs":{},"child":{}},"FromUserName":{"text":"o7fAGj-j4y-Ey5nvTTE1Z9wwyCY4","attrs":{},"child":{}},"CreateTime":{"text":"1362986469","attrs":{},"child":{}},"MsgType":{"text":"text","attrs":{},"child":{}},"Content":{"text":"tq朝阳","attrs":{},"child":{}},"MsgId":{"text":"5853982309245517843","attrs":{},"child":{}}}}}	
+2013-03-13 17:21:27	POST	/?nonce=test&timestamp=1363166487631&signature=6fc52771f523d193a1e29965da2d75c624a2b41e	
+2013-03-13 17:21:27	POST_XML	<xml><ToUserName><![CDATA[gh_8f47ec7c055d]]></ToUserName>
+<FromUserName><![CDATA[o7fAGj-j4y-Ey5nvTTE1Z9wwyCY4]]></FromUserName>
+<CreateTime>1362986469</CreateTime>
+<MsgType><![CDATA[text]]></MsgType>
+<Content><![CDATA[tq朝阳]]></Content>
+<MsgId>5853982309245517843</MsgId>
+</xml>	{"xml":{"text":"","attrs":{},"child":{"ToUserName":{"text":"gh_8f47ec7c055d","attrs":{},"child":{}},"FromUserName":{"text":"o7fAGj-j4y-Ey5nvTTE1Z9wwyCY4","attrs":{},"child":{}},"CreateTime":{"text":"1362986469","attrs":{},"child":{}},"MsgType":{"text":"text","attrs":{},"child":{}},"Content":{"text":"tq朝阳","attrs":{},"child":{}},"MsgId":{"text":"5853982309245517843","attrs":{},"child":{}}}}}	
+2013-03-13 17:22:07	POST	/?nonce=test&timestamp=1363166527085&signature=adc2c4c3423a86be09c5a4bd935bf96bb19a7fe2	
+2013-03-13 17:22:07	POST_XML	<xml><ToUserName><![CDATA[gh_8f47ec7c055d]]></ToUserName>
+<FromUserName><![CDATA[o7fAGj-j4y-Ey5nvTTE1Z9wwyCY4]]></FromUserName>
+<CreateTime>1362986469</CreateTime>
+<MsgType><![CDATA[text]]></MsgType>
+<Content><![CDATA[tq朝阳]]></Content>
+<MsgId>5853982309245517843</MsgId>
+</xml>	{"xml":{"text":"","attrs":{},"child":{"ToUserName":{"text":"gh_8f47ec7c055d","attrs":{},"child":{}},"FromUserName":{"text":"o7fAGj-j4y-Ey5nvTTE1Z9wwyCY4","attrs":{},"child":{}},"CreateTime":{"text":"1362986469","attrs":{},"child":{}},"MsgType":{"text":"text","attrs":{},"child":{}},"Content":{"text":"tq朝阳","attrs":{},"child":{}},"MsgId":{"text":"5853982309245517843","attrs":{},"child":{}}}}}	
+2013-03-13 17:23:40	POST	/?nonce=test&timestamp=1363166620008&signature=2f84e32a6dcd8be5071866d90769914f53d3de66	
+2013-03-13 17:23:40	POST_XML	<xml><ToUserName><![CDATA[gh_8f47ec7c055d]]></ToUserName>
+<FromUserName><![CDATA[o7fAGj-j4y-Ey5nvTTE1Z9wwyCY4]]></FromUserName>
+<CreateTime>1362986469</CreateTime>
+<MsgType><![CDATA[text]]></MsgType>
+<Content><![CDATA[tq朝阳]]></Content>
+<MsgId>5853982309245517843</MsgId>
+</xml>	{"xml":{"text":"","attrs":{},"child":{"ToUserName":{"text":"gh_8f47ec7c055d","attrs":{},"child":{}},"FromUserName":{"text":"o7fAGj-j4y-Ey5nvTTE1Z9wwyCY4","attrs":{},"child":{}},"CreateTime":{"text":"1362986469","attrs":{},"child":{}},"MsgType":{"text":"text","attrs":{},"child":{}},"Content":{"text":"tq朝阳","attrs":{},"child":{}},"MsgId":{"text":"5853982309245517843","attrs":{},"child":{}}}}}	
+2013-03-13 17:24:03	POST	/?nonce=test&timestamp=1363166643585&signature=d0f957f457636a7d9cceb9994c78dc0963c7034e	
+2013-03-13 17:24:03	POST_XML	<xml><ToUserName><![CDATA[gh_8f47ec7c055d]]></ToUserName>
+<FromUserName><![CDATA[o7fAGj-j4y-Ey5nvTTE1Z9wwyCY4]]></FromUserName>
+<CreateTime>1362986469</CreateTime>
+<MsgType><![CDATA[text]]></MsgType>
+<Content><![CDATA[tq丰台区]]></Content>
+<MsgId>5853982309245517843</MsgId>
+</xml>	{"xml":{"text":"","attrs":{},"child":{"ToUserName":{"text":"gh_8f47ec7c055d","attrs":{},"child":{}},"FromUserName":{"text":"o7fAGj-j4y-Ey5nvTTE1Z9wwyCY4","attrs":{},"child":{}},"CreateTime":{"text":"1362986469","attrs":{},"child":{}},"MsgType":{"text":"text","attrs":{},"child":{}},"Content":{"text":"tq丰台区","attrs":{},"child":{}},"MsgId":{"text":"5853982309245517843","attrs":{},"child":{}}}}}	
+2013-03-13 17:25:22	POST	/?nonce=test&timestamp=1363166722444&signature=8c5b3706bd02d6a579d4f27ef727e0c5f38936db	
+2013-03-13 17:25:22	POST_XML	<xml><ToUserName><![CDATA[gh_8f47ec7c055d]]></ToUserName><FromUserName><![CDATA[o7fAGj-j4y-Ey5nvTTE1Z9wwyCY4]]></FromUserName><CreateTime>1363159184</CreateTime><MsgType><![CDATA[text]]></MsgType><Content><![CDATA[help]]></Content><MsgId>5854724114522046464</MsgId></xml>	{"xml":{"text":"","attrs":{},"child":{"ToUserName":{"text":"gh_8f47ec7c055d","attrs":{},"child":{}},"FromUserName":{"text":"o7fAGj-j4y-Ey5nvTTE1Z9wwyCY4","attrs":{},"child":{}},"CreateTime":{"text":"1363159184","attrs":{},"child":{}},"MsgType":{"text":"text","attrs":{},"child":{}},"Content":{"text":"help","attrs":{},"child":{}},"MsgId":{"text":"5854724114522046464","attrs":{},"child":{}}}}}	
