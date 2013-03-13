@@ -7,6 +7,7 @@ function WeiXin(fromInfo){
 	this.FromUserName = root.FromUserName.text;
 }
 var wxProp = WeiXin.prototype;
+//发送文本
 wxProp.textTmpl = function(content){
 	return '<xml>'+
 				'<ToUserName><![CDATA['+this.FromUserName+']]></ToUserName>'+
@@ -20,6 +21,7 @@ wxProp.textTmpl = function(content){
 wxProp.musicTmpl = function(){
 
 }
+//发送新闻消息
 wxProp.newsTmpl = function(news){
 	if(Object.prototype.toString.call(news) != '[object Array]'){
 		news = [news];
