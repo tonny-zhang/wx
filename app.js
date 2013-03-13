@@ -9,6 +9,7 @@ var fs = require('fs');
 process.env.TZ = 'Asia/Shanghai';
 http.createServer(function (req, res) {
 	var response = function(code,msg){
+		log(reqMethod,reqUrl,code,msg);
 		res.writeHead(code,{'Content-Type':'text/html;charset=utf-8'});
 		res.end(msg);
 	}
@@ -34,9 +35,8 @@ http.createServer(function (req, res) {
 			}else{
 				var message = '';
 				req.on('data',function(d){
-					message = d.toString();
-				});
-				req.on('end',function(){
+					message += d.toString();
+				}).on('end',function(){
 					var fn = function(err,msg){
 						if(err){
 							log('RES_XML',err);
@@ -78,6 +78,8 @@ http.createServer(function (req, res) {
 							response(500,'parse xml error!');
 						}
 					},true)
+				}).on('err',function(err){
+					response('500','receive post error!');
 				});
 			}
 		}else{

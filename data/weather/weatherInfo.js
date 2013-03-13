@@ -219,14 +219,18 @@ function getWeatherByCode(areaCode,callback){
 exports.getWeatherByLocation = getWeatherByLocation;
 exports.getWeatherByCityName = getWeatherByCityName;
 exports.getWeatherByCode = getWeatherByCode;
+
 if(process.argv[1] == __filename){
-	getWeatherByLocation('36.34064,114.09603300000003',function(err,data){
+	// getWeatherByLocation('36.34064,114.09603300000003',function(err,data){
+	// 	console.log(err,data);
+	// });
+	// getWeatherByCityName('河北邯郸',function(err,data){
+	// 	console.log(err,data);
+	// });
+	// getWeatherByCode('101010100',function(err,data){
+	// 	console.log('===========',err,data);
+	// });
+	getWeatherByCityName('中国北京市朝阳区红军营南路',function(err,data){
 		console.log(err,data);
-	});
-	getWeatherByCityName('河北邯郸',function(err,data){
-		console.log(err,data);
-	});
-	getWeatherByCode('101010100',function(err,data){
-		console.log('===========',err,data);
-	});
+	})
 }
