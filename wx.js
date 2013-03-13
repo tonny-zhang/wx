@@ -74,7 +74,7 @@ wxProp.parseText = function(callback){
 			}
 			
 	}
-	replyContent && callback && callback(null, replyContent);
+	replyContent && callback && callback(null,_this.textTmpl(replyContent));
 }
 wxProp._parseWeatherResult = function(err,weatherInfo,callback){
 	if(err){
