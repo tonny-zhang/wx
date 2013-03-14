@@ -26,7 +26,7 @@ function getCityInfo(callback){
 				readingState = STATE_PROVINCE;
 				currentProvince = m[1];
 				readCaptial = true;
-			}else if((m = v.match(/^(\d{2})\s+(.+)$/))){
+			}else if((m = v.match(/^(\d{2}|\d{9})\s+(.+)$/))){
 				if(m[1] != '00'){
 					if(readingState == STATE_PROVINCE){
 						cityInfo[currentProvince]['city'][m[1]] = {name:m[2],city:{length:0}};
@@ -48,7 +48,7 @@ function getCityInfo(callback){
 			}
 		});
 		callback && callback(err,cityInfo);
-		//console.log(cityInfo['10105']);
+		//console.log(cityInfo['10131']);
 	});
 }
 
@@ -127,7 +127,11 @@ function cityInfo2File(){
 							}
 							var name = countryList[countryId].name;
 							var id = proId+cityId+countryId;
-							initSimpleInfo(name,id,(countryId == cityId || name == cityName?LEVEL_CITY:LEVEL_COUNTRY),[proName,cityName].join('-'));
+							if(countryId == cityId || name == cityName){
+								initSimpleInfo(name,id,LEVEL_CITY,proName);
+							}else{
+								initSimpleInfo(name,id,LEVEL_COUNTRY,[proName,cityName].join('-'));
+							}
 							if(isReadCaptial && captialId == countryId){
 								initSimpleInfo(proName,id,LEVEL_PROVINCE);
 								captialId = null;
@@ -136,7 +140,11 @@ function cityInfo2File(){
 						}
 						
 					}else{
-						initSimpleInfo(cityName,proId+cityId+'00',cityId == '01'?LEVEL_PROVINCE:LEVEL_CITY,proName);
+						if(captialId && captialId == cityId){
+							initSimpleInfo(proName,captialId,LEVEL_PROVINCE);
+							captialId = null;
+						}
+						initSimpleInfo(cityName,cityId.length > 2?cityId:proId+cityId+'00',cityId == '01'?LEVEL_PROVINCE:LEVEL_CITY,proName);
 						//cityInfoArr.push([cityInfo.name,proId+cityId,proInfo.name,proId].join('\t'));
 					}
 				}

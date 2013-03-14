@@ -16,7 +16,7 @@ function getAreaCode(keyWords){
 		var keyWord = (v.w||v).replace(/[省市区]|自治区/,'');
 		if(keyWord.length < 5){//关键字数太多舍弃
 			var dic = require(DIC_PATH+firstLetter.convert(keyWord.charAt(0))+EXT_CATCH_FILE);
-			var cityInfo = dic[keyWord];
+			var cityInfo = dic[keyWord];//console.log(keyWord,cityInfo);
 			if(cityInfo){
 				cityInfo.forEach(function(v,i){
 					v.name = keyWord;
@@ -26,46 +26,39 @@ function getAreaCode(keyWords){
 			}
 		}
 	});
-	if(result.length > 1){
+	if(ret.length == 1){
+		return result;
+	}else{
 		var sortArr = [[],[],[]];
 		result.forEach(function(v,i){
 			sortArr[v.l-1].push(v);
 		});
-		function check(item,parentArr){
-			if(!parentArr.length){
-				return true;
+		sortArr = sortArr.filter(function(v,i){
+			if( v.length > 0 ){
+				return v;
 			}
-			var parent = item.parent;
-			for(var i = parentArr.length-1;i>=0;i--){
-				if(~parent.indexOf(parentArr[i].name)){
-					return true;
-				}
-			}
+		});
+		//当输入多个关键词，但只有一个查出天气情况，进行模糊匹配
+		if(sortArr.length == 1){
+			return sortArr.pop();
 		}
-
-		
-		for(var i = sortArr.length - 1;i>=0;i--){
-			var levelArr = sortArr[i];
-			if(!levelArr.length){
-				continue;
-			}
-			if(i == 0){
-				return sortArr[0];
-			}
-			var returnArr = [];
-			for(var i1 = levelArr.length-1;i1>=0;i1--){
-				var item = levelArr[i1];
-				if(check(item,sortArr[i-1])){
-					if(i == 1 || (i == 2 && check(item,sortArr[0]))){
-						returnArr.push(item);
+		return sortArr.pop().filter(function(v,i){
+			var pName = v.parent;
+			var toLen = sortArr.length;
+			var tempIndex = 0;
+			var returnVal;
+			sortArr.forEach(function(v1,i1){
+				v1.forEach(function(v2,i2){
+					if(~pName.indexOf(v2.name)){
+						tempIndex++;
+						if(tempIndex == toLen){
+							returnVal = v;
+						}
 					}
-				}
-			}
-			return returnArr;
-		}
-		return [];
-	}else if(result.length == 1){
-		return result;
+				})
+			});
+			return returnVal;
+		});
 	}
 }
 
@@ -102,7 +95,7 @@ function parseCode(code,callback){
 		}else{
 			var replyInfo = [];
 			code.forEach(function(v,i){
-				replyInfo.push(v.parent.replace('-','').replace(v.name,'') + v.name);
+				replyInfo.push((v.parent||'').replace('-','').replace(v.name,'') + v.name);
 			});
 			callback && callback({code:code,msg:"查到多个相同的信息:["+replyInfo.join()+"]，请输入更精确的信息查询，如："+replyInfo[0]})
 		}
@@ -147,4 +140,8 @@ if(process.argv[1] == __filename){
 	console.log(getAreaCode('湖南'));
 	console.log(getAreaCode('湖南tq'));
 	console.log(getAreaCode('湖南tw'));
+	console.log(getAreaCode('青海海南'));
+	console.log(getAreaCode('海南'));
+	console.log(getAreaCode('海口'));
+	console.log(getAreaCode('河北邯郸磁县'));
 }

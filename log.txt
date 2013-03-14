@@ -153,3 +153,42 @@
 <MsgId>5853982309245517843</MsgId>
 </xml>	{"xml":{"text":"","attrs":{},"child":{"ToUserName":{"text":"gh_8f47ec7c055d","attrs":{},"child":{}},"FromUserName":{"text":"o7fAGj-j4y-Ey5nvTTE1Z9wwyCY4","attrs":{},"child":{}},"CreateTime":{"text":"1362986469","attrs":{},"child":{}},"MsgType":{"text":"text","attrs":{},"child":{}},"Content":{"text":"tq朝阳","attrs":{},"child":{}},"MsgId":{"text":"5853982309245517843","attrs":{},"child":{}}}}}	
 2013-03-14 16:42:35	POST	/?nonce=test&timestamp=1363250555421&signature=b80f930dcdb96946f60d2cad20872c037cc5ce79	200	<xml><ToUserName><![CDATA[o7fAGj-j4y-Ey5nvTTE1Z9wwyCY4]]></ToUserName><FromUserName><![CDATA[gh_8f47ec7c055d]]></FromUserName><CreateTime>1363250555631</CreateTime><MsgType><![CDATA[text]]></MsgType><Content><![CDATA[查到多个相同的信息:[辽宁朝阳,北京朝阳]，请输入更精确的信息查询，如：辽宁朝阳]]></Content><FuncFlag>0</FuncFlag></xml>	
+2013-03-14 16:44:18	POST	/?nonce=test&timestamp=1363250658781&signature=523a9ed21bcdc7ecedbfe1306049df300721157e	
+2013-03-14 16:44:18	POST_XML	<xml><ToUserName><![CDATA[gh_8f47ec7c055d]]></ToUserName>
+<FromUserName><![CDATA[o7fAGj-j4y-Ey5nvTTE1Z9wwyCY4]]></FromUserName>
+<CreateTime>1362986469</CreateTime>
+<MsgType><![CDATA[text]]></MsgType>
+<Content><![CDATA[tq辽宁朝阳]]></Content>
+<MsgId>5853982309245517843</MsgId>
+</xml>	{"xml":{"text":"","attrs":{},"child":{"ToUserName":{"text":"gh_8f47ec7c055d","attrs":{},"child":{}},"FromUserName":{"text":"o7fAGj-j4y-Ey5nvTTE1Z9wwyCY4","attrs":{},"child":{}},"CreateTime":{"text":"1362986469","attrs":{},"child":{}},"MsgType":{"text":"text","attrs":{},"child":{}},"Content":{"text":"tq辽宁朝阳","attrs":{},"child":{}},"MsgId":{"text":"5853982309245517843","attrs":{},"child":{}}}}}	
+2013-03-14 16:44:19	POST	/?nonce=test&timestamp=1363250658781&signature=523a9ed21bcdc7ecedbfe1306049df300721157e	200	<xml><ToUserName><![CDATA[o7fAGj-j4y-Ey5nvTTE1Z9wwyCY4]]></ToUserName><FromUserName><![CDATA[gh_8f47ec7c055d]]></FromUserName><CreateTime>1363250659140</CreateTime><MsgType><![CDATA[text]]></MsgType><Content><![CDATA[朝阳 晴 13℃~-1℃
+天气冷，建议着棉服、羽绒服、皮夹克加羊毛衫等冬季服装。年老体弱者宜着厚棉衣、冬大衣或厚羽绒服。]]></Content><FuncFlag>0</FuncFlag></xml>	
+2013-03-14 18:26:24	POST	/?nonce=test&timestamp=1363256784289&signature=26c1d3b40099a118dbbe52d5a6923b6b15e2ac97	
+2013-03-14 18:26:24	POST_XML	<xml><ToUserName><![CDATA[gh_8f47ec7c055d]]></ToUserName>
+<FromUserName><![CDATA[o7fAGj-j4y-Ey5nvTTE1Z9wwyCY4]]></FromUserName>
+<CreateTime>1362986469</CreateTime>
+<MsgType><![CDATA[text]]></MsgType>
+<Content><![CDATA[tq辽宁朝阳]]></Content>
+<MsgId>5853982309245517843</MsgId>
+</xml>	{"xml":{"text":"","attrs":{},"child":{"ToUserName":{"text":"gh_8f47ec7c055d","attrs":{},"child":{}},"FromUserName":{"text":"o7fAGj-j4y-Ey5nvTTE1Z9wwyCY4","attrs":{},"child":{}},"CreateTime":{"text":"1362986469","attrs":{},"child":{}},"MsgType":{"text":"text","attrs":{},"child":{}},"Content":{"text":"tq辽宁朝阳","attrs":{},"child":{}},"MsgId":{"text":"5853982309245517843","attrs":{},"child":{}}}}}	
+2013-03-14 18:26:24	POST	/?nonce=test&timestamp=1363256784289&signature=26c1d3b40099a118dbbe52d5a6923b6b15e2ac97	200	<xml><ToUserName><![CDATA[o7fAGj-j4y-Ey5nvTTE1Z9wwyCY4]]></ToUserName><FromUserName><![CDATA[gh_8f47ec7c055d]]></FromUserName><CreateTime>1363256784588</CreateTime><MsgType><![CDATA[text]]></MsgType><Content><![CDATA[朝阳 晴 0℃~16℃
+天气冷，建议着棉服、羽绒服、皮夹克加羊毛衫等冬季服装。年老体弱者宜着厚棉衣、冬大衣或厚羽绒服。]]></Content><FuncFlag>0</FuncFlag></xml>	
+2013-03-14 18:26:54	POST	/?nonce=test&timestamp=1363256814166&signature=03a9a77d339baf0f0b29b908c18e424c00aae806	
+2013-03-14 18:26:54	POST_XML	<xml><ToUserName><![CDATA[gh_8f47ec7c055d]]></ToUserName>
+<FromUserName><![CDATA[o7fAGj-j4y-Ey5nvTTE1Z9wwyCY4]]></FromUserName>
+<CreateTime>1362986469</CreateTime>
+<MsgType><![CDATA[text]]></MsgType>
+<Content><![CDATA[tq海口]]></Content>
+<MsgId>5853982309245517843</MsgId>
+</xml>	{"xml":{"text":"","attrs":{},"child":{"ToUserName":{"text":"gh_8f47ec7c055d","attrs":{},"child":{}},"FromUserName":{"text":"o7fAGj-j4y-Ey5nvTTE1Z9wwyCY4","attrs":{},"child":{}},"CreateTime":{"text":"1362986469","attrs":{},"child":{}},"MsgType":{"text":"text","attrs":{},"child":{}},"Content":{"text":"tq海口","attrs":{},"child":{}},"MsgId":{"text":"5853982309245517843","attrs":{},"child":{}}}}}	
+2013-03-14 18:26:54	POST	/?nonce=test&timestamp=1363256814166&signature=03a9a77d339baf0f0b29b908c18e424c00aae806	200	<xml><ToUserName><![CDATA[o7fAGj-j4y-Ey5nvTTE1Z9wwyCY4]]></ToUserName><FromUserName><![CDATA[gh_8f47ec7c055d]]></FromUserName><CreateTime>1363256814442</CreateTime><MsgType><![CDATA[text]]></MsgType><Content><![CDATA[海口 小雨 21℃~26℃
+建议着长袖T恤、衬衫加单裤等服装。年老体弱者宜着针织长袖衬衫、马甲和长裤。]]></Content><FuncFlag>0</FuncFlag></xml>	
+2013-03-14 18:34:14	POST	/?nonce=test&timestamp=1363257254477&signature=3ac64fba1862ed962f2f81bf2bac2761a5828e9f	
+2013-03-14 18:34:14	POST_XML	<xml><ToUserName><![CDATA[gh_8f47ec7c055d]]></ToUserName>
+<FromUserName><![CDATA[o7fAGj-j4y-Ey5nvTTE1Z9wwyCY4]]></FromUserName>
+<CreateTime>1362986469</CreateTime>
+<MsgType><![CDATA[text]]></MsgType>
+<Content><![CDATA[tq海南]]></Content>
+<MsgId>5853982309245517843</MsgId>
+</xml>	{"xml":{"text":"","attrs":{},"child":{"ToUserName":{"text":"gh_8f47ec7c055d","attrs":{},"child":{}},"FromUserName":{"text":"o7fAGj-j4y-Ey5nvTTE1Z9wwyCY4","attrs":{},"child":{}},"CreateTime":{"text":"1362986469","attrs":{},"child":{}},"MsgType":{"text":"text","attrs":{},"child":{}},"Content":{"text":"tq海南","attrs":{},"child":{}},"MsgId":{"text":"5853982309245517843","attrs":{},"child":{}}}}}	
+2013-03-14 18:34:14	POST	/?nonce=test&timestamp=1363257254477&signature=3ac64fba1862ed962f2f81bf2bac2761a5828e9f	200	<xml><ToUserName><![CDATA[o7fAGj-j4y-Ey5nvTTE1Z9wwyCY4]]></ToUserName><FromUserName><![CDATA[gh_8f47ec7c055d]]></FromUserName><CreateTime>1363257254789</CreateTime><MsgType><![CDATA[text]]></MsgType><Content><![CDATA[查到多个相同的信息:[青海海南,海南]，请输入更精确的信息查询，如：青海海南]]></Content><FuncFlag>0</FuncFlag></xml>	
