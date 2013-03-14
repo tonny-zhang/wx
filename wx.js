@@ -1,4 +1,4 @@
-var weather = require('./data/weather/weatherInfo');
+var weather = require('./data/weather');
 var helper = require('./data/helper');
 var getTags = require('./data/fdx/tag.js').getTags;
 
@@ -7,7 +7,7 @@ function WeiXin(fromInfo){
 	this.ToUserName = root.ToUserName.text;
 	this.FromUserName = root.FromUserName.text;
 }
-WeiXin.showTag = true;
+WeiXin.showTag = false;
 var wxProp = WeiXin.prototype;
 //发送文本
 wxProp.textTmpl = function(content){
@@ -20,8 +20,8 @@ wxProp.textTmpl = function(content){
 				'<FuncFlag>0</FuncFlag>'+
 			'</xml>';
 }
-wxProp.musicTmpl = function(){
-
+wxProp.musicTmpl = function(info){
+	
 }
 //发送新闻消息
 wxProp.newsTmpl = function(news){
@@ -47,6 +47,17 @@ wxProp.newsTmpl = function(news){
 				'<FuncFlag>1</FuncFlag>'+
 			'</xml> ';
 	return xml;
+}
+wxProp.linkTmpl = function(info){
+	return '<xml><ToUserName><![CDATA['+this.FromUserName+']]></ToUserName>'+
+			'<FromUserName><![CDATA['+this.ToUserName+']]></FromUserName>'+
+			'<CreateTime>'+(+new Date())+'</CreateTime>'+
+			'<MsgType><![CDATA[link]]></MsgType>'+
+			'<Title><![CDATA['+info.title+']]></Title>'+
+			'<Description><![CDATA['+info.desc+']]></Description>'+
+			'<Url><![CDATA['+info.url+']]></Url>'+
+			'<FuncFlag>0</FuncFlag>'+
+			'</xml>'
 }
 wxProp.parseText = function(callback){
 	var _this = this;
@@ -91,24 +102,22 @@ wxProp._parseWeatherResult = function(err,weatherInfo,callback){
 		if(callback){
 			if(WeiXin.showTag){
 				getTags(weatherInfo.cityid,function(err,infoArr){
-					var arr = [{title:weatherText,desc:'天气描述',picUrl:'https://devcenter.heroku.com/assets/public/heroku-header-logo.png',url:'http://www.fandongxi.com'}]
+					// var arr = [{title:weatherText,desc:'天气描述',picUrl:'https://devcenter.heroku.com/assets/public/heroku-header-logo.png',url:'http://www.fandongxi.com'}]
+					// infoArr.forEach(function(v,i){
+					// 	arr.push({title:v.tag.name,desc:v.tag.name+'desc',picUrl:v.imgs[0].src,'url':v.tag.href});
+					// });
+					// callback(null,_this.newsTmpl(arr));
+					var arr = [];
+					console.log(infoArr);
 					infoArr.forEach(function(v,i){
-						arr.push({title:v.tag.name,desc:v.tag.name+'desc',picUrl:v.imgs[0].src,'url':v.tag.href});
+						arr.push(v.tag.name);
 					});
-					callback(null,_this.newsTmpl(arr));
+					callback(null,_this.textTmpl([weatherText,weatherInfo.index48_d,'小编推荐：'+arr.join()].join('\n')));
 				});
 			}else{
-				callback(null,_this.textTmpl(weatherText));
+				callback(null,_this.textTmpl(weatherText+'\n'+weatherInfo.index48_d));
 			}
 		}
-		// var res = WeiXin.showTag ?
-		// 			this.textTmpl(weatherText):
-		// 			this.newsTmpl([{
-		// 				title: weatherText,
-		// 				desc: '-desc',
-		// 				picUrl: 
-		// 			}]);
-		// callback && callback(null,);
 	}
 }
 wxProp.parseLocation = function(callback){

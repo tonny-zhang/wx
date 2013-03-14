@@ -13,7 +13,7 @@ function getTags(areaCode,callback){
 		var msg = '';
 		res.on('data',function(d){
 			msg += d.toString();
-		}).on('end',function(){
+		}).on('end',function(){console.log(msg);
 			var match = msg.replace(/[\r\n\t]|\s{3,}/g,'').replace(/<script[^>]*?>[^>]*?<\/script>/,'').match(/<body>(.+?)<\/body>/);
 			
 			if(match){
@@ -62,7 +62,7 @@ function getTags(areaCode,callback){
 }
 exports.getTags = getTags;
 if(__filename == process.argv[1]){
-	getTags('101091007',function(){
+	getTags('101010300',function(){
 		require('fs').writeFileSync('./log.js',JSON.stringify(arguments[1]));
 		console.log(arguments)
 	});

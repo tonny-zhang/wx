@@ -200,8 +200,12 @@ function getWeatherByCityName(cityName,callback){
 	//http://api.map.baidu.com/geocoder?address=%E6%9C%9D%E9%98%B3&output=json&key=37492c0ee6f924cb5e934fa08c6b1676&city=%E8%BE%BD%E5%AE%81
 	request('http://api.map.baidu.com/geocoder?address='+encodeURIComponent(cityName)+'&output=json&key=37492c0ee6f924cb5e934fa08c6b1676',function(err,message){
 		parseBDResult(message,function(err,result){
-			var location = result.location;
-			getWeatherByLocation([location.lat,location.lng].join(),callback);
+			if(err || !result.location){
+				callback({msg:'no location'});
+			}else{
+				var location = result.location;
+				getWeatherByLocation([location.lat,location.lng].join(),callback);
+			}
 		});
 	});
 }
@@ -230,7 +234,7 @@ if(process.argv[1] == __filename){
 	// getWeatherByCode('101010100',function(err,data){
 	// 	console.log('===========',err,data);
 	// });
-	getWeatherByCityName('中国北京市朝阳区红军营南路',function(err,data){
+	getWeatherByCityName('海南',function(err,data){
 		console.log(err,data);
 	})
 }
