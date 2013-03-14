@@ -102,9 +102,9 @@ function parseCode(code,callback){
 		}else{
 			var replyInfo = [];
 			code.forEach(function(v,i){
-				replyInfo.push(v.parent.replace('-','').replace(v.name) + v.name);
+				replyInfo.push(v.parent.replace('-','').replace(v.name,'') + v.name);
 			});
-			callback && callback({code:code,msg:"我查到多个相同的信息:["+replyInfo.json()+"]，请输入更精确的信息查询，如："+replyInfo[0]})
+			callback && callback({code:code,msg:"查到多个相同的信息:["+replyInfo.join()+"]，请输入更精确的信息查询，如："+replyInfo[0]})
 		}
 	}else{
 		callback && callback({msg:"我没有找到你要查询的地区信息"})

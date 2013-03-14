@@ -68,7 +68,7 @@ wxProp.parseText = function(callback){
 			replyContent = helper.welcome + '\n' + helper.help;
 		case 'h':
 		case 'help':
-			replyContent = helper.welcome;
+			replyContent = helper.help;
 			break;
 		case '天气':
 		case 'tq':
@@ -96,7 +96,11 @@ wxProp.parseText = function(callback){
 wxProp._parseWeatherResult = function(err,weatherInfo,callback){
 	var _this = this;
 	if(err){
-		callback && callback(err);
+		if(err.msg){
+			callback && callback(null,_this.textTmpl(err.msg));
+		}else{
+			callback && callback(err);
+		}
 	}else{
 		var weatherText = [weatherInfo.city,weatherInfo.weather1,weatherInfo.temp1].join(' ');
 		if(callback){

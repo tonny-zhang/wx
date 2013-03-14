@@ -98,3 +98,58 @@
 </xml>	{"xml":{"text":"","attrs":{},"child":{"ToUserName":{"text":"gh_8f47ec7c055d","attrs":{},"child":{}},"FromUserName":{"text":"o7fAGj-j4y-Ey5nvTTE1Z9wwyCY4","attrs":{},"child":{}},"CreateTime":{"text":"1362986469","attrs":{},"child":{}},"MsgType":{"text":"text","attrs":{},"child":{}},"Content":{"text":"tq丰台区","attrs":{},"child":{}},"MsgId":{"text":"5853982309245517843","attrs":{},"child":{}}}}}	
 2013-03-14 16:30:35	POST	/?nonce=test&timestamp=1363249834759&signature=cf2f0fb687b0424c35158c818aa7d3ed75d61e0e	200	<xml><ToUserName><![CDATA[o7fAGj-j4y-Ey5nvTTE1Z9wwyCY4]]></ToUserName><FromUserName><![CDATA[gh_8f47ec7c055d]]></FromUserName><CreateTime>1363249835050</CreateTime><MsgType><![CDATA[text]]></MsgType><Content><![CDATA[丰台 多云 11℃~0℃
 天气冷，建议着棉服、羽绒服、皮夹克加羊毛衫等冬季服装。年老体弱者宜着厚棉衣、冬大衣或厚羽绒服。]]></Content><FuncFlag>0</FuncFlag></xml>	
+2013-03-14 16:32:18	POST	/?nonce=test&timestamp=1363249938774&signature=dff0e8934a6ccf4e2d9a26110584d2dc95ae21dd	
+2013-03-14 16:32:18	POST_XML	<xml><ToUserName><![CDATA[gh_8f47ec7c055d]]></ToUserName>
+<FromUserName><![CDATA[o7fAGj-j4y-Ey5nvTTE1Z9wwyCY4]]></FromUserName>
+<CreateTime>1362986469</CreateTime>
+<MsgType><![CDATA[text]]></MsgType>
+<Content><![CDATA[A]]></Content>
+<MsgId>5853982309245517843</MsgId>
+</xml>	{"xml":{"text":"","attrs":{},"child":{"ToUserName":{"text":"gh_8f47ec7c055d","attrs":{},"child":{}},"FromUserName":{"text":"o7fAGj-j4y-Ey5nvTTE1Z9wwyCY4","attrs":{},"child":{}},"CreateTime":{"text":"1362986469","attrs":{},"child":{}},"MsgType":{"text":"text","attrs":{},"child":{}},"Content":{"text":"A","attrs":{},"child":{}},"MsgId":{"text":"5853982309245517843","attrs":{},"child":{}}}}}	
+2013-03-14 16:32:18	POST	/?nonce=test&timestamp=1363249938774&signature=dff0e8934a6ccf4e2d9a26110584d2dc95ae21dd	200	<xml><ToUserName><![CDATA[o7fAGj-j4y-Ey5nvTTE1Z9wwyCY4]]></ToUserName><FromUserName><![CDATA[gh_8f47ec7c055d]]></FromUserName><CreateTime>1363249938963</CreateTime><MsgType><![CDATA[text]]></MsgType><Content><![CDATA[您输入的「A」我不知道什么意思,下面的信息可能会帮到您
+
+以下为输出帮助：
+1.h[help] 得到帮助信息
+2.天气[tq|TQ] 查询天气情况
+3.直接发送位置(右下角的加号)查询天气]]></Content><FuncFlag>0</FuncFlag></xml>	
+2013-03-14 16:32:39	POST	/?nonce=test&timestamp=1363249959765&signature=b73046e2284a67a703fe447db653ef22e9c81326	
+2013-03-14 16:32:39	POST	/?nonce=test&timestamp=1363249959765&signature=b73046e2284a67a703fe447db653ef22e9c81326	200	<xml><ToUserName><![CDATA[o7fAGj-j4y-Ey5nvTTE1Z9wwyCY4]]></ToUserName><FromUserName><![CDATA[gh_8f47ec7c055d]]></FromUserName><CreateTime>1363249959963</CreateTime><MsgType><![CDATA[text]]></MsgType><Content><![CDATA[热烈欢迎]]></Content><FuncFlag>0</FuncFlag></xml>	
+2013-03-14 16:32:39	POST_XML	<xml><ToUserName><![CDATA[gh_8f47ec7c055d]]></ToUserName><FromUserName><![CDATA[o7fAGj-j4y-Ey5nvTTE1Z9wwyCY4]]></FromUserName><CreateTime>1363159184</CreateTime><MsgType><![CDATA[text]]></MsgType><Content><![CDATA[help]]></Content><MsgId>5854724114522046464</MsgId></xml>	{"xml":{"text":"","attrs":{},"child":{"ToUserName":{"text":"gh_8f47ec7c055d","attrs":{},"child":{}},"FromUserName":{"text":"o7fAGj-j4y-Ey5nvTTE1Z9wwyCY4","attrs":{},"child":{}},"CreateTime":{"text":"1363159184","attrs":{},"child":{}},"MsgType":{"text":"text","attrs":{},"child":{}},"Content":{"text":"help","attrs":{},"child":{}},"MsgId":{"text":"5854724114522046464","attrs":{},"child":{}}}}}	
+2013-03-14 16:36:46	POST	/?nonce=test&timestamp=1363250206671&signature=42a060518099f5aaee9605c1842dcfa2f419a569	
+2013-03-14 16:36:46	POST_XML	<xml><ToUserName><![CDATA[gh_8f47ec7c055d]]></ToUserName>
+<FromUserName><![CDATA[o7fAGj-j4y-Ey5nvTTE1Z9wwyCY4]]></FromUserName>
+<CreateTime>1362986469</CreateTime>
+<MsgType><![CDATA[text]]></MsgType>
+<Content><![CDATA[tq朝阳]]></Content>
+<MsgId>5853982309245517843</MsgId>
+</xml>	{"xml":{"text":"","attrs":{},"child":{"ToUserName":{"text":"gh_8f47ec7c055d","attrs":{},"child":{}},"FromUserName":{"text":"o7fAGj-j4y-Ey5nvTTE1Z9wwyCY4","attrs":{},"child":{}},"CreateTime":{"text":"1362986469","attrs":{},"child":{}},"MsgType":{"text":"text","attrs":{},"child":{}},"Content":{"text":"tq朝阳","attrs":{},"child":{}},"MsgId":{"text":"5853982309245517843","attrs":{},"child":{}}}}}	
+2013-03-14 16:36:46	RES_XML	[object Object]	
+2013-03-14 16:36:46	POST	/?nonce=test&timestamp=1363250206671&signature=42a060518099f5aaee9605c1842dcfa2f419a569	500	{"code":[{"id":"101071201","l":2,"parent":"辽宁-朝阳","name":"朝阳"},{"id":"101010300","l":2,"parent":"北京","name":"朝阳"}],"msg":"查到多个相同的信息:[辽宁undefined朝阳,北京朝阳]，请输入更精确的信息查询，如：辽宁undefined朝阳"}	
+2013-03-14 16:38:40	POST	/?nonce=test&timestamp=1363250320374&signature=7c4df42f3e5927dbba5952c0b9e9aeda9056bb63	
+2013-03-14 16:38:40	POST_XML	<xml><ToUserName><![CDATA[gh_8f47ec7c055d]]></ToUserName>
+<FromUserName><![CDATA[o7fAGj-j4y-Ey5nvTTE1Z9wwyCY4]]></FromUserName>
+<CreateTime>1362986469</CreateTime>
+<MsgType><![CDATA[text]]></MsgType>
+<Content><![CDATA[tq朝阳]]></Content>
+<MsgId>5853982309245517843</MsgId>
+</xml>	{"xml":{"text":"","attrs":{},"child":{"ToUserName":{"text":"gh_8f47ec7c055d","attrs":{},"child":{}},"FromUserName":{"text":"o7fAGj-j4y-Ey5nvTTE1Z9wwyCY4","attrs":{},"child":{}},"CreateTime":{"text":"1362986469","attrs":{},"child":{}},"MsgType":{"text":"text","attrs":{},"child":{}},"Content":{"text":"tq朝阳","attrs":{},"child":{}},"MsgId":{"text":"5853982309245517843","attrs":{},"child":{}}}}}	
+2013-03-14 16:38:40	RES_XML	[object Object]	
+2013-03-14 16:38:40	POST	/?nonce=test&timestamp=1363250320374&signature=7c4df42f3e5927dbba5952c0b9e9aeda9056bb63	200	查到多个相同的信息:[辽宁undefined朝阳,北京朝阳]，请输入更精确的信息查询，如：辽宁undefined朝阳	
+2013-03-14 16:42:05	POST	/?nonce=test&timestamp=1363250524828&signature=5dcd9888c49e8987625bd4d05f048c067ddc71a2	
+2013-03-14 16:42:05	POST_XML	<xml><ToUserName><![CDATA[gh_8f47ec7c055d]]></ToUserName>
+<FromUserName><![CDATA[o7fAGj-j4y-Ey5nvTTE1Z9wwyCY4]]></FromUserName>
+<CreateTime>1362986469</CreateTime>
+<MsgType><![CDATA[text]]></MsgType>
+<Content><![CDATA[tq朝阳]]></Content>
+<MsgId>5853982309245517843</MsgId>
+</xml>	{"xml":{"text":"","attrs":{},"child":{"ToUserName":{"text":"gh_8f47ec7c055d","attrs":{},"child":{}},"FromUserName":{"text":"o7fAGj-j4y-Ey5nvTTE1Z9wwyCY4","attrs":{},"child":{}},"CreateTime":{"text":"1362986469","attrs":{},"child":{}},"MsgType":{"text":"text","attrs":{},"child":{}},"Content":{"text":"tq朝阳","attrs":{},"child":{}},"MsgId":{"text":"5853982309245517843","attrs":{},"child":{}}}}}	
+2013-03-14 16:42:05	POST	/?nonce=test&timestamp=1363250524828&signature=5dcd9888c49e8987625bd4d05f048c067ddc71a2	200	<xml><ToUserName><![CDATA[o7fAGj-j4y-Ey5nvTTE1Z9wwyCY4]]></ToUserName><FromUserName><![CDATA[gh_8f47ec7c055d]]></FromUserName><CreateTime>1363250525031</CreateTime><MsgType><![CDATA[text]]></MsgType><Content><![CDATA[查到多个相同的信息:[辽宁undefined朝阳,北京朝阳]，请输入更精确的信息查询，如：辽宁undefined朝阳]]></Content><FuncFlag>0</FuncFlag></xml>	
+2013-03-14 16:42:35	POST	/?nonce=test&timestamp=1363250555421&signature=b80f930dcdb96946f60d2cad20872c037cc5ce79	
+2013-03-14 16:42:35	POST_XML	<xml><ToUserName><![CDATA[gh_8f47ec7c055d]]></ToUserName>
+<FromUserName><![CDATA[o7fAGj-j4y-Ey5nvTTE1Z9wwyCY4]]></FromUserName>
+<CreateTime>1362986469</CreateTime>
+<MsgType><![CDATA[text]]></MsgType>
+<Content><![CDATA[tq朝阳]]></Content>
+<MsgId>5853982309245517843</MsgId>
+</xml>	{"xml":{"text":"","attrs":{},"child":{"ToUserName":{"text":"gh_8f47ec7c055d","attrs":{},"child":{}},"FromUserName":{"text":"o7fAGj-j4y-Ey5nvTTE1Z9wwyCY4","attrs":{},"child":{}},"CreateTime":{"text":"1362986469","attrs":{},"child":{}},"MsgType":{"text":"text","attrs":{},"child":{}},"Content":{"text":"tq朝阳","attrs":{},"child":{}},"MsgId":{"text":"5853982309245517843","attrs":{},"child":{}}}}}	
+2013-03-14 16:42:35	POST	/?nonce=test&timestamp=1363250555421&signature=b80f930dcdb96946f60d2cad20872c037cc5ce79	200	<xml><ToUserName><![CDATA[o7fAGj-j4y-Ey5nvTTE1Z9wwyCY4]]></ToUserName><FromUserName><![CDATA[gh_8f47ec7c055d]]></FromUserName><CreateTime>1363250555631</CreateTime><MsgType><![CDATA[text]]></MsgType><Content><![CDATA[查到多个相同的信息:[辽宁朝阳,北京朝阳]，请输入更精确的信息查询，如：辽宁朝阳]]></Content><FuncFlag>0</FuncFlag></xml>	
