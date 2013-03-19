@@ -102,7 +102,7 @@ wxProp._parseWeatherResult = function(err,weatherInfo,callback){
 			callback && callback(err);
 		}
 	}else{
-		var weatherText = [weatherInfo.city,weatherInfo.weather1,weatherInfo.temp1].join(' ');
+		var weatherText = [weatherInfo.city,weatherInfo.temp1,weatherInfo.weather1,weatherInfo.wind1,'\n明天',weatherInfo.temp2,weatherInfo.weather2,weatherInfo.wind2].join(' ');
 		if(callback){
 			if(WeiXin.showTag){
 				getTags(weatherInfo.cityid,function(err,infoArr){

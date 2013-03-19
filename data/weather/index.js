@@ -4,6 +4,20 @@ var firstLetter = require('util/chineseFirstLetter');
 var DIC_PATH = './cache/';
 var EXT_CATCH_FILE = '.json';
 
+/*定义工具方法*/
+(function(){
+	var _toString = Object.prototype.toString;
+	['Array','Object'].forEach(function(v){
+		global['is'+v] = function(a){
+			return _toString.call(a) == '[object '+v+']';
+		}
+	});
+	global['getCityName'] = function(v){
+		return (v.parent||'').replace('-','').replace(v.name,'') + v.name+(v.l == LEVEL_PROVINCE ? '省' : '');//这里的加“省”提示，只针对“海南”
+	}
+})();
+
+
 var segment = new Segment();
 // 使用默认的识别模块及字典
 segment.useDefaltNoDictOptimizer();
@@ -43,6 +57,14 @@ function getAreaCode(keyWords){
 		if(sortArr.length == 1){
 			result = sortArr.pop();
 		}else{
+			//当关键词数和结果数不一致时，说明出现了如：朝阳　的查询结果，应把第三级（即“北京朝阳”）的数据去掉
+			if(sortArr.length > keyWords.length && keyWords.length == 2){
+				if(/北京|天津|上海|重庆/.test(keyWords[0].name)){
+					sortArr.splice(1,1);
+				}else{
+					sortArr.pop();
+				}
+			}
 			result = sortArr.pop().filter(function(v,i){
 				var pName = v.parent;
 				var toLen = sortArr.length;
@@ -58,7 +80,7 @@ function getAreaCode(keyWords){
 						}
 					})
 				});
-				return returnVal;
+				return !!returnVal;
 			});
 		}
 	}
@@ -67,7 +89,7 @@ function getAreaCode(keyWords){
 }
 function _parseKeywords(keyWords){
 	var result = [];
-	keyWords = Object.prototype.toString.call(keyWords) == '[object Array]' ? keyWords : segment.doSegment(keyWords).map(function(v,i){
+	keyWords = isArray(keyWords) ? keyWords : segment.doSegment(keyWords).map(function(v,i){
 		return v.w;
 	});
 	keyWords.forEach(function(v,i){
@@ -82,9 +104,9 @@ function _parseKeywords(keyWords){
 		}
 		keyWords[i] = {name:v,level:level};
 	});
-	// keyWords.sort(function(a,b){
-	// 	return a.level < b.level;
-	// });
+	keyWords.sort(function(a,b){
+		return a.level < b.level;
+	});
 	return keyWords;
 }
 function _optimizeAreaCode(areaCode,keyWords){
@@ -132,11 +154,11 @@ function getWeatherByLocation (location,callback){//纬度,经度 lat,lng
 function _parseCode(code,callback){
 	if(code){
 		if(code.length == 1){
-			getWeatherByCode(code[0].id,callback);
+			getWeatherByCode(code[0],callback);
 		}else{
 			var replyInfo = [];
 			code.forEach(function(v,i){
-				replyInfo.push((v.parent||'').replace('-','').replace(v.name,'') + v.name+(v.l == LEVEL_PROVINCE?'省':''));//这里的加“省”提示，只针对“海南”
+				replyInfo.push(getCityName(v));//这里的加“省”提示，只针对“海南”
 			});
 			callback && callback({code:code,msg:"查到多个相同的信息:["+replyInfo.join()+"]，请输入更精确的信息查询，如："+replyInfo.join(' 或 ')})
 		}
@@ -150,11 +172,13 @@ function getWeatherByCityName(cityName,callback){
 	_parseCode(code,callback);
 }
 function getWeatherByCode(areaCode,callback){
-	if(/^\d{9}$/.test(areaCode)){
+	var _tempAreaCode = areaCode;
+	if(/^\d{9}$/.test(areaCode) || isObject(_tempAreaCode) && (areaCode = _tempAreaCode.id)){
 		//http://data.weather.com.cn/forecast/101010100.html
 		_request('http://m.weather.com.cn/data/'+areaCode+'.html',function(err,message){
 			var weatherInfo = JSON.parse(message);
 			if(weatherInfo && weatherInfo.weatherinfo){
+				_tempAreaCode.name && (weatherInfo.weatherinfo.city = getCityName(_tempAreaCode));
 				callback && callback(null,weatherInfo.weatherinfo);
 			}else{
 				callback && callback(null,{msg:'no weather info'});
@@ -167,7 +191,7 @@ function getWeatherByCode(areaCode,callback){
 
 exports.getWeatherByLocation = getWeatherByLocation;
 exports.getWeatherByCityName = getWeatherByCityName;
-exports.getWeatherByCode = getWeatherByCode;
+// exports.getWeatherByCode = getWeatherByCode;
 exports.getAreaCode = getAreaCode
 
 if(process.argv[1] == __filename){
@@ -176,21 +200,22 @@ if(process.argv[1] == __filename){
 	// console.log(_parseKeywords('河北省邯郸市'));
 	// console.log(_parseKeywords('朝阳区'));
 	// console.log(_parseKeywords('朝阳市辽宁省'));
-	// console.log(_parseKeywords('内蒙古自治区'));
+	// console.log(_parseKeywords('内蒙古'));
 
 	console.log(getAreaCode('北京'));
 	console.log(getAreaCode('北京朝阳'));
+	console.log(getAreaCode('辽宁朝阳'));
 	console.log(getAreaCode('朝阳'));
-	console.log(getAreaCode('河北'));
-	console.log(getAreaCode('河北邯郸'));
-	console.log(getAreaCode('邯郸'));
-	console.log(getAreaCode('邯郸磁县'));
-	console.log(getAreaCode('湖南'));
-	console.log(getAreaCode('湖南tq'));
-	console.log(getAreaCode('湖南tw'));
-	console.log(getAreaCode('青海海南'));
-	console.log(getAreaCode('海南'));
-	console.log(getAreaCode('海南省'));
-	console.log(getAreaCode('海口'));
-	console.log(getAreaCode('河北邯郸磁县'));
+	// console.log(getAreaCode('河北'));
+	// console.log(getAreaCode('河北邯郸'));
+	// console.log(getAreaCode('邯郸'));
+	// console.log(getAreaCode('邯郸磁县'));
+	// console.log(getAreaCode('湖南'));
+	// console.log(getAreaCode('湖南tq'));
+	// console.log(getAreaCode('湖南tw'));
+	// console.log(getAreaCode('青海海南'));
+	// console.log(getAreaCode('海南'));
+	// console.log(getAreaCode('海南省'));
+	// console.log(getAreaCode('海口'));
+	// console.log(getAreaCode('河北邯郸磁县'));
 }
