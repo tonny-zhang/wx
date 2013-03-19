@@ -1,0 +1,16 @@
+#git config --global user.name "your name"
+#git config --global user.email you@srv.com
+#git config core.autocrlf false -- turn off line end conversion
+
+git config alias.st status
+git config alias.ci commit
+git config alias.co checkout
+git config alias.br branch
+
+
+# 井号开头的是注释
+.svn
+.git/  
+Thumbs.db
+#文件夹需要以/结尾
+/log.txt

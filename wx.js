@@ -119,7 +119,7 @@ wxProp._parseWeatherResult = function(err,weatherInfo,callback){
 					callback(null,_this.textTmpl([weatherText,weatherInfo.index48_d,'小编推荐：'+arr.join()].join('\n')));
 				});
 			}else{
-				callback(null,_this.textTmpl(helper.weather.replace('__weatherInfo__',weatherText).replace('__weatherNotice__',weatherInfo.index48_d)));
+				callback(null,_this.textTmpl(helper.weather.replace('__weatherInfo__',weatherText).replace('__weatherNotice__',weatherInfo.index48_d).replace('__areaCode__',weatherInfo.cityid)));
 			}
 		}
 	}

@@ -80,28 +80,28 @@ str = '<xml><ToUserName><![CDATA[gh_8f47ec7c055d]]></ToUserName>'+
 // 			'<MsgId>5853982309245517843</MsgId>\n'+
 // 			'</xml>'
 // //查询正确城市天气			
-str = '<xml><ToUserName><![CDATA[gh_8f47ec7c055d]]></ToUserName>\n'+
-			'<FromUserName><![CDATA[o7fAGj-j4y-Ey5nvTTE1Z9wwyCY4]]></FromUserName>\n'+
-			'<CreateTime>1362986469</CreateTime>\n'+
-			'<MsgType><![CDATA[text]]></MsgType>\n'+
-			'<Content><![CDATA[tq丰台区]]></Content>\n'+
-			'<MsgId>5853982309245517843</MsgId>\n'+
-			'</xml>'
-//查询两个城市天气			
-str = '<xml><ToUserName><![CDATA[gh_8f47ec7c055d]]></ToUserName>\n'+
-			'<FromUserName><![CDATA[o7fAGj-j4y-Ey5nvTTE1Z9wwyCY4]]></FromUserName>\n'+
-			'<CreateTime>1362986469</CreateTime>\n'+
-			'<MsgType><![CDATA[text]]></MsgType>\n'+
-			'<Content><![CDATA[tq朝阳]]></Content>\n'+
-			'<MsgId>5853982309245517843</MsgId>\n'+
-			'</xml>'
-str = '<xml><ToUserName><![CDATA[gh_8f47ec7c055d]]></ToUserName>\n'+
-			'<FromUserName><![CDATA[o7fAGj-j4y-Ey5nvTTE1Z9wwyCY4]]></FromUserName>\n'+
-			'<CreateTime>1362986469</CreateTime>\n'+
-			'<MsgType><![CDATA[text]]></MsgType>\n'+
-			'<Content><![CDATA[tq辽宁朝阳]]></Content>\n'+
-			'<MsgId>5853982309245517843</MsgId>\n'+
-			'</xml>'
+// str = '<xml><ToUserName><![CDATA[gh_8f47ec7c055d]]></ToUserName>\n'+
+// 			'<FromUserName><![CDATA[o7fAGj-j4y-Ey5nvTTE1Z9wwyCY4]]></FromUserName>\n'+
+// 			'<CreateTime>1362986469</CreateTime>\n'+
+// 			'<MsgType><![CDATA[text]]></MsgType>\n'+
+// 			'<Content><![CDATA[tq丰台区]]></Content>\n'+
+// 			'<MsgId>5853982309245517843</MsgId>\n'+
+// 			'</xml>'
+// //查询两个城市天气			
+// str = '<xml><ToUserName><![CDATA[gh_8f47ec7c055d]]></ToUserName>\n'+
+// 			'<FromUserName><![CDATA[o7fAGj-j4y-Ey5nvTTE1Z9wwyCY4]]></FromUserName>\n'+
+// 			'<CreateTime>1362986469</CreateTime>\n'+
+// 			'<MsgType><![CDATA[text]]></MsgType>\n'+
+// 			'<Content><![CDATA[tq朝阳]]></Content>\n'+
+// 			'<MsgId>5853982309245517843</MsgId>\n'+
+// 			'</xml>'
+// str = '<xml><ToUserName><![CDATA[gh_8f47ec7c055d]]></ToUserName>\n'+
+// 			'<FromUserName><![CDATA[o7fAGj-j4y-Ey5nvTTE1Z9wwyCY4]]></FromUserName>\n'+
+// 			'<CreateTime>1362986469</CreateTime>\n'+
+// 			'<MsgType><![CDATA[text]]></MsgType>\n'+
+// 			'<Content><![CDATA[tq辽宁朝阳]]></Content>\n'+
+// 			'<MsgId>5853982309245517843</MsgId>\n'+
+// 			'</xml>'
 // str = '<xml><ToUserName><![CDATA[gh_8f47ec7c055d]]></ToUserName>\n'+
 // 			'<FromUserName><![CDATA[o7fAGj-j4y-Ey5nvTTE1Z9wwyCY4]]></FromUserName>\n'+
 // 			'<CreateTime>1362986469</CreateTime>\n'+
