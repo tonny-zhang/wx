@@ -410,3 +410,29 @@
 2013-03-19 14:30:56	POST	/?nonce=test&timestamp=1363674656438&signature=07a8ca930a948902b683756c4dd94298e92768fc	200	<xml><ToUserName><![CDATA[o7fAGj-j4y-Ey5nvTTE1Z9wwyCY4]]></ToUserName><FromUserName><![CDATA[gh_8f47ec7c055d]]></FromUserName><CreateTime>1363674656781</CreateTime><MsgType><![CDATA[text]]></MsgType><Content><![CDATA[辽宁朝阳 0℃~-10℃ 小雪转多云 东北风4-5级 
 明天 3℃~-4℃ 晴 北风3-4级
 天气冷，建议着棉服、羽绒服、皮夹克加羊毛衫等冬季服装。年老体弱者宜着厚棉衣、冬大衣或厚羽绒服。]]></Content><FuncFlag>0</FuncFlag></xml>	
+2013-03-19 14:41:47	POST	/?nonce=test&timestamp=1363675307000&signature=108eabdf688a662207f4cdc6ad8939426601f6e0	
+2013-03-19 14:41:47	POST_XML	<xml><ToUserName><![CDATA[gh_8f47ec7c055d]]></ToUserName>
+<FromUserName><![CDATA[o7fAGj-j4y-Ey5nvTTE1Z9wwyCY4]]></FromUserName>
+<CreateTime>1362986469</CreateTime>
+<MsgType><![CDATA[text]]></MsgType>
+<Content><![CDATA[tq辽宁朝阳]]></Content>
+<MsgId>5853982309245517843</MsgId>
+</xml>	{"xml":{"text":"","attrs":{},"child":{"ToUserName":{"text":"gh_8f47ec7c055d","attrs":{},"child":{}},"FromUserName":{"text":"o7fAGj-j4y-Ey5nvTTE1Z9wwyCY4","attrs":{},"child":{}},"CreateTime":{"text":"1362986469","attrs":{},"child":{}},"MsgType":{"text":"text","attrs":{},"child":{}},"Content":{"text":"tq辽宁朝阳","attrs":{},"child":{}},"MsgId":{"text":"5853982309245517843","attrs":{},"child":{}}}}}	
+2013-03-19 14:41:47	POST	/?nonce=test&timestamp=1363675307000&signature=108eabdf688a662207f4cdc6ad8939426601f6e0	200	<xml><ToUserName><![CDATA[o7fAGj-j4y-Ey5nvTTE1Z9wwyCY4]]></ToUserName><FromUserName><![CDATA[gh_8f47ec7c055d]]></FromUserName><CreateTime>1363675307296</CreateTime><MsgType><![CDATA[text]]></MsgType><Content><![CDATA[辽宁朝阳 
+今天： 0℃~-10℃ 小雪转多云 东北风4-5级 
+明天: 3℃~-4℃ 晴 北风3-4级
+温馨提示：天气冷，建议着棉服、羽绒服、皮夹克加羊毛衫等冬季服装。年老体弱者宜着厚棉衣、冬大衣或厚羽绒服。
+(ps:以上信息仅供参考，请以天气网信息为准！)]]></Content><FuncFlag>0</FuncFlag></xml>	
+2013-03-19 14:43:01	POST	/?nonce=test&timestamp=1363675381391&signature=1c3237c788ae25f5b6dfd12a4520521db3c34019	
+2013-03-19 14:43:01	POST_XML	<xml><ToUserName><![CDATA[gh_8f47ec7c055d]]></ToUserName>
+<FromUserName><![CDATA[o7fAGj-j4y-Ey5nvTTE1Z9wwyCY4]]></FromUserName>
+<CreateTime>1362986469</CreateTime>
+<MsgType><![CDATA[text]]></MsgType>
+<Content><![CDATA[tq辽宁朝阳]]></Content>
+<MsgId>5853982309245517843</MsgId>
+</xml>	{"xml":{"text":"","attrs":{},"child":{"ToUserName":{"text":"gh_8f47ec7c055d","attrs":{},"child":{}},"FromUserName":{"text":"o7fAGj-j4y-Ey5nvTTE1Z9wwyCY4","attrs":{},"child":{}},"CreateTime":{"text":"1362986469","attrs":{},"child":{}},"MsgType":{"text":"text","attrs":{},"child":{}},"Content":{"text":"tq辽宁朝阳","attrs":{},"child":{}},"MsgId":{"text":"5853982309245517843","attrs":{},"child":{}}}}}	
+2013-03-19 14:43:04	POST	/?nonce=test&timestamp=1363675381391&signature=1c3237c788ae25f5b6dfd12a4520521db3c34019	200	<xml><ToUserName><![CDATA[o7fAGj-j4y-Ey5nvTTE1Z9wwyCY4]]></ToUserName><FromUserName><![CDATA[gh_8f47ec7c055d]]></FromUserName><CreateTime>1363675384109</CreateTime><MsgType><![CDATA[text]]></MsgType><Content><![CDATA[辽宁朝阳 
+今天： 0℃~-10℃ 小雪转多云 东北风4-5级 
+明天: 3℃~-4℃ 晴 北风3-4级
+温馨提示：天气冷，建议着棉服、羽绒服、皮夹克加羊毛衫等冬季服装。年老体弱者宜着厚棉衣、冬大衣或厚羽绒服。
+(ps:以上信息仅供参考，请以<a href='http://www.weather.com.cn'>天气网</a>信息为准！)]]></Content><FuncFlag>0</FuncFlag></xml>	

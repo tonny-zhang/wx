@@ -77,17 +77,17 @@ wxProp.parseText = function(callback){
 			break;
 		default :
 			var match;
-			if((match = content.match(/^(tq|TQ|天气)(.*?)$|^(.*?)(tq|TQ|天气)$/))){
+			if((match = content.match(/^(tq|天气)(.*?)$|^(.*?)(tq|天气)$/i))){
 				var city = match[2] || match[3];
 				if(city){
 					weather.getWeatherByCityName(city,function(err,weatherInfo){
 						_this._parseWeatherResult(err,weatherInfo,callback);
 					});
 				}else{
-					callback && callback(null, '请输入要查询天气的城市,如：tq北京,北京天气');
+					callback && callback(null, helper.noKeywords);
 				}
 			}else{
-				replyContent = '您输入的「'+content+'」我不知道什么意思,下面的信息可能会帮到您\n\n'+helper.help;
+				replyContent = helper.noMeaning.replace('__content__',content) + '\n\n' + helper.help;
 			}
 			
 	}
@@ -102,7 +102,7 @@ wxProp._parseWeatherResult = function(err,weatherInfo,callback){
 			callback && callback(err);
 		}
 	}else{
-		var weatherText = [weatherInfo.city,weatherInfo.temp1,weatherInfo.weather1,weatherInfo.wind1,'\n明天',weatherInfo.temp2,weatherInfo.weather2,weatherInfo.wind2].join(' ');
+		var weatherText = [weatherInfo.city,'\n今天：',weatherInfo.temp1,weatherInfo.weather1,weatherInfo.wind1,'\n明天:',weatherInfo.temp2,weatherInfo.weather2,weatherInfo.wind2].join(' ');
 		if(callback){
 			if(WeiXin.showTag){
 				getTags(weatherInfo.cityid,function(err,infoArr){
@@ -119,7 +119,7 @@ wxProp._parseWeatherResult = function(err,weatherInfo,callback){
 					callback(null,_this.textTmpl([weatherText,weatherInfo.index48_d,'小编推荐：'+arr.join()].join('\n')));
 				});
 			}else{
-				callback(null,_this.textTmpl(weatherText+'\n'+weatherInfo.index48_d));
+				callback(null,_this.textTmpl(helper.weather.replace('__weatherInfo__',weatherText).replace('__weatherNotice__',weatherInfo.index48_d)));
 			}
 		}
 	}
