@@ -192,3 +192,39 @@
 <MsgId>5853982309245517843</MsgId>
 </xml>	{"xml":{"text":"","attrs":{},"child":{"ToUserName":{"text":"gh_8f47ec7c055d","attrs":{},"child":{}},"FromUserName":{"text":"o7fAGj-j4y-Ey5nvTTE1Z9wwyCY4","attrs":{},"child":{}},"CreateTime":{"text":"1362986469","attrs":{},"child":{}},"MsgType":{"text":"text","attrs":{},"child":{}},"Content":{"text":"tq海南","attrs":{},"child":{}},"MsgId":{"text":"5853982309245517843","attrs":{},"child":{}}}}}	
 2013-03-14 18:34:14	POST	/?nonce=test&timestamp=1363257254477&signature=3ac64fba1862ed962f2f81bf2bac2761a5828e9f	200	<xml><ToUserName><![CDATA[o7fAGj-j4y-Ey5nvTTE1Z9wwyCY4]]></ToUserName><FromUserName><![CDATA[gh_8f47ec7c055d]]></FromUserName><CreateTime>1363257254789</CreateTime><MsgType><![CDATA[text]]></MsgType><Content><![CDATA[查到多个相同的信息:[青海海南,海南]，请输入更精确的信息查询，如：青海海南]]></Content><FuncFlag>0</FuncFlag></xml>	
+2013-03-19 11:52:32	POST	/?nonce=test&timestamp=1363665152249&signature=49cb62df4612ed4fa6fcd9a9853b2fdc4c8559c9	
+2013-03-19 11:52:32	POST_XML	<xml><ToUserName><![CDATA[gh_8f47ec7c055d]]></ToUserName>
+<FromUserName><![CDATA[o7fAGj-j4y-Ey5nvTTE1Z9wwyCY4]]></FromUserName>
+<CreateTime>1362986469</CreateTime>
+<MsgType><![CDATA[text]]></MsgType>
+<Content><![CDATA[tq海南]]></Content>
+<MsgId>5853982309245517843</MsgId>
+</xml>	{"xml":{"text":"","attrs":{},"child":{"ToUserName":{"text":"gh_8f47ec7c055d","attrs":{},"child":{}},"FromUserName":{"text":"o7fAGj-j4y-Ey5nvTTE1Z9wwyCY4","attrs":{},"child":{}},"CreateTime":{"text":"1362986469","attrs":{},"child":{}},"MsgType":{"text":"text","attrs":{},"child":{}},"Content":{"text":"tq海南","attrs":{},"child":{}},"MsgId":{"text":"5853982309245517843","attrs":{},"child":{}}}}}	
+2013-03-19 11:52:32	POST	/?nonce=test&timestamp=1363665152249&signature=49cb62df4612ed4fa6fcd9a9853b2fdc4c8559c9	200	<xml><ToUserName><![CDATA[o7fAGj-j4y-Ey5nvTTE1Z9wwyCY4]]></ToUserName><FromUserName><![CDATA[gh_8f47ec7c055d]]></FromUserName><CreateTime>1363665152531</CreateTime><MsgType><![CDATA[text]]></MsgType><Content><![CDATA[查到多个相同的信息:[,]，请输入更精确的信息查询，如： 或 ]]></Content><FuncFlag>0</FuncFlag></xml>	
+2013-03-19 11:53:24	POST	/?nonce=test&timestamp=1363665204156&signature=49a12b55248fa38269fe76ebadf409c6efabb913	
+2013-03-19 11:53:24	POST_XML	<xml><ToUserName><![CDATA[gh_8f47ec7c055d]]></ToUserName>
+<FromUserName><![CDATA[o7fAGj-j4y-Ey5nvTTE1Z9wwyCY4]]></FromUserName>
+<CreateTime>1362986469</CreateTime>
+<MsgType><![CDATA[text]]></MsgType>
+<Content><![CDATA[tq海南]]></Content>
+<MsgId>5853982309245517843</MsgId>
+</xml>	{"xml":{"text":"","attrs":{},"child":{"ToUserName":{"text":"gh_8f47ec7c055d","attrs":{},"child":{}},"FromUserName":{"text":"o7fAGj-j4y-Ey5nvTTE1Z9wwyCY4","attrs":{},"child":{}},"CreateTime":{"text":"1362986469","attrs":{},"child":{}},"MsgType":{"text":"text","attrs":{},"child":{}},"Content":{"text":"tq海南","attrs":{},"child":{}},"MsgId":{"text":"5853982309245517843","attrs":{},"child":{}}}}}	
+2013-03-19 11:53:24	POST	/?nonce=test&timestamp=1363665204156&signature=49a12b55248fa38269fe76ebadf409c6efabb913	200	<xml><ToUserName><![CDATA[o7fAGj-j4y-Ey5nvTTE1Z9wwyCY4]]></ToUserName><FromUserName><![CDATA[gh_8f47ec7c055d]]></FromUserName><CreateTime>1363665204360</CreateTime><MsgType><![CDATA[text]]></MsgType><Content><![CDATA[查到多个相同的信息:[,]，请输入更精确的信息查询，如： 或 ]]></Content><FuncFlag>0</FuncFlag></xml>	
+2013-03-19 11:54:01	POST	/?nonce=test&timestamp=1363665241625&signature=41d054d49ec24031e844c1e87617c7aa133f7df3	
+2013-03-19 11:54:01	POST_XML	<xml><ToUserName><![CDATA[gh_8f47ec7c055d]]></ToUserName>
+<FromUserName><![CDATA[o7fAGj-j4y-Ey5nvTTE1Z9wwyCY4]]></FromUserName>
+<CreateTime>1362986469</CreateTime>
+<MsgType><![CDATA[text]]></MsgType>
+<Content><![CDATA[tq海南]]></Content>
+<MsgId>5853982309245517843</MsgId>
+</xml>	{"xml":{"text":"","attrs":{},"child":{"ToUserName":{"text":"gh_8f47ec7c055d","attrs":{},"child":{}},"FromUserName":{"text":"o7fAGj-j4y-Ey5nvTTE1Z9wwyCY4","attrs":{},"child":{}},"CreateTime":{"text":"1362986469","attrs":{},"child":{}},"MsgType":{"text":"text","attrs":{},"child":{}},"Content":{"text":"tq海南","attrs":{},"child":{}},"MsgId":{"text":"5853982309245517843","attrs":{},"child":{}}}}}	
+2013-03-19 11:54:01	POST	/?nonce=test&timestamp=1363665241625&signature=41d054d49ec24031e844c1e87617c7aa133f7df3	200	<xml><ToUserName><![CDATA[o7fAGj-j4y-Ey5nvTTE1Z9wwyCY4]]></ToUserName><FromUserName><![CDATA[gh_8f47ec7c055d]]></FromUserName><CreateTime>1363665241890</CreateTime><MsgType><![CDATA[text]]></MsgType><Content><![CDATA[查到多个相同的信息:[青海海南,海南省]，请输入更精确的信息查询，如：青海海南 或 海南省]]></Content><FuncFlag>0</FuncFlag></xml>	
+2013-03-19 11:54:21	POST	/?nonce=test&timestamp=1363665261109&signature=c75995f7af6928fe4970bc9e4dcad84a2b883c11	
+2013-03-19 11:54:21	POST_XML	<xml><ToUserName><![CDATA[gh_8f47ec7c055d]]></ToUserName>
+<FromUserName><![CDATA[o7fAGj-j4y-Ey5nvTTE1Z9wwyCY4]]></FromUserName>
+<CreateTime>1362986469</CreateTime>
+<MsgType><![CDATA[text]]></MsgType>
+<Content><![CDATA[tq海南]]></Content>
+<MsgId>5853982309245517843</MsgId>
+</xml>	{"xml":{"text":"","attrs":{},"child":{"ToUserName":{"text":"gh_8f47ec7c055d","attrs":{},"child":{}},"FromUserName":{"text":"o7fAGj-j4y-Ey5nvTTE1Z9wwyCY4","attrs":{},"child":{}},"CreateTime":{"text":"1362986469","attrs":{},"child":{}},"MsgType":{"text":"text","attrs":{},"child":{}},"Content":{"text":"tq海南","attrs":{},"child":{}},"MsgId":{"text":"5853982309245517843","attrs":{},"child":{}}}}}	
+2013-03-19 11:54:21	POST	/?nonce=test&timestamp=1363665261109&signature=c75995f7af6928fe4970bc9e4dcad84a2b883c11	200	<xml><ToUserName><![CDATA[o7fAGj-j4y-Ey5nvTTE1Z9wwyCY4]]></ToUserName><FromUserName><![CDATA[gh_8f47ec7c055d]]></FromUserName><CreateTime>1363665261312</CreateTime><MsgType><![CDATA[text]]></MsgType><Content><![CDATA[查到多个相同的信息:[青海海南,海南省]，请输入更精确的信息查询，如：青海海南 或 海南省]]></Content><FuncFlag>0</FuncFlag></xml>	

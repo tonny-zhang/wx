@@ -136,7 +136,7 @@ function _parseCode(code,callback){
 		}else{
 			var replyInfo = [];
 			code.forEach(function(v,i){
-				replyInfo.push((v.parent||'').replace('-','').replace(v.name,'') + v.name+v.l == LEVEL_PROVINCE?'省':'');//这里的加“省”提示，只针对“海南”
+				replyInfo.push((v.parent||'').replace('-','').replace(v.name,'') + v.name+(v.l == LEVEL_PROVINCE?'省':''));//这里的加“省”提示，只针对“海南”
 			});
 			callback && callback({code:code,msg:"查到多个相同的信息:["+replyInfo.join()+"]，请输入更精确的信息查询，如："+replyInfo.join(' 或 ')})
 		}
