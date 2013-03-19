@@ -140,15 +140,16 @@ function cityInfo2File(){
 						}
 						
 					}else{
-						if(captialId && captialId == cityId){
+						//目前只为海南省初始化省会
+						if(captialId && captialId == cityId && cityId.length == 9){
 							initSimpleInfo(proName,captialId,LEVEL_PROVINCE);
 							captialId = null;
 						}
-						initSimpleInfo(cityName,cityId.length > 2?cityId:proId+cityId+'00',cityId == '01'?LEVEL_PROVINCE:LEVEL_CITY,proName);
+						initSimpleInfo(cityName,cityId.length > 2?cityId:proId+cityId+'00',cityId == '01'?LEVEL_PROVINCE:LEVEL_COUNTRY,proName);	
+												
 						//cityInfoArr.push([cityInfo.name,proId+cityId,proInfo.name,proId].join('\t'));
 					}
 				}
-
 			}
 			//fs.writeFile('./result.data',cityInfoArr.join('\r\n'));
 			info2SubFile();
