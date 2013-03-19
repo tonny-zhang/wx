@@ -29,3 +29,12 @@
 1.h[help] 得到帮助信息
 2.天气[tq|TQ] 查询天气情况,如：北京天气
 3.直接发送位置(工具栏加号添加)查询天气]]></Content><FuncFlag>0</FuncFlag></xml>	
+2013-03-19 14:56:33	POST	/?nonce=test&timestamp=1363676193281&signature=6265948ea375eaa5f5878c50cf153605ccf351a3	
+2013-03-19 14:56:33	POST_XML	<xml><ToUserName><![CDATA[gh_8f47ec7c055d]]></ToUserName>
+<FromUserName><![CDATA[o7fAGj-j4y-Ey5nvTTE1Z9wwyCY4]]></FromUserName>
+<CreateTime>1362986469</CreateTime>
+<MsgType><![CDATA[text]]></MsgType>
+<Content><![CDATA[海南天气]]></Content>
+<MsgId>5853982309245517843</MsgId>
+</xml>	{"xml":{"text":"","attrs":{},"child":{"ToUserName":{"text":"gh_8f47ec7c055d","attrs":{},"child":{}},"FromUserName":{"text":"o7fAGj-j4y-Ey5nvTTE1Z9wwyCY4","attrs":{},"child":{}},"CreateTime":{"text":"1362986469","attrs":{},"child":{}},"MsgType":{"text":"text","attrs":{},"child":{}},"Content":{"text":"海南天气","attrs":{},"child":{}},"MsgId":{"text":"5853982309245517843","attrs":{},"child":{}}}}}	
+2013-03-19 14:56:33	POST	/?nonce=test&timestamp=1363676193281&signature=6265948ea375eaa5f5878c50cf153605ccf351a3	200	<xml><ToUserName><![CDATA[o7fAGj-j4y-Ey5nvTTE1Z9wwyCY4]]></ToUserName><FromUserName><![CDATA[gh_8f47ec7c055d]]></FromUserName><CreateTime>1363676193484</CreateTime><MsgType><![CDATA[text]]></MsgType><Content><![CDATA[查到多个相同的信息:[青海海南,海南省]，请输入更精确的信息查询，如：青海海南 或 海南省]]></Content><FuncFlag>0</FuncFlag></xml>	
