@@ -54,7 +54,7 @@ function getAreaCode(keyWords){
 					var dic = require(DIC_PATH+fileName+EXT_CATCH_FILE);
 					var cityInfo = dic[keyWord];//console.log(keyWord,cityInfo);
 					if(cityInfo){
-						keyWords.push(keyWord);//重新记录有效关键词
+						keyWords.push(v);//重新记录有效关键词
 						cityInfo.forEach(function(v,i){
 							v.name = keyWord;
 							cityInfo[i] = v;
@@ -139,7 +139,7 @@ function _parseKeywords(keyWords){
 	return keyWords;
 }
 /*优化得到的城市地区码信息(根据输入的关键词等级)*/
-function _optimizeAreaCode(areaCode,keyWords){
+function _optimizeAreaCode(areaCode,keyWords){//console.log(areaCode,keyWords);
 	//目前测试数据，只优化关键词为一个，且结果有两个的，如：海南
 	if(keyWords.length == 1 && areaCode.length > 1){
 		var level = keyWords[0].level;

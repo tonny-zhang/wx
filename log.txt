@@ -59,3 +59,38 @@
 明天: 14℃~4℃ 多云转晴 微风转北风3-4级
 温馨提示：天气冷，建议着棉服、羽绒服、皮夹克加羊毛衫等冬季服装。年老体弱者宜着厚棉衣、冬大衣或厚羽绒服。
 (ps:以上信息仅供参考，请以<a href='http://www.weather.com.cn/weather/101010300.shtml'>天气网</a>信息为准！)]]></Content><FuncFlag>0</FuncFlag></xml>	
+2013-03-20 11:37:04	POST	/?nonce=test&timestamp=1363750624359&signature=394879e6e8b691f03d108d36eea9e5e30074b4f1	
+2013-03-20 11:37:04	POST_XML	<xml><ToUserName><![CDATA[gh_8f47ec7c055d]]></ToUserName>
+<FromUserName><![CDATA[o7fAGj-j4y-Ey5nvTTE1Z9wwyCY4]]></FromUserName>
+<CreateTime>1362986469</CreateTime>
+<MsgType><![CDATA[text]]></MsgType>
+<Content><![CDATA[朝阳区天气]]></Content>
+<MsgId>5853982309245517843</MsgId>
+</xml>	{"xml":{"text":"","attrs":{},"child":{"ToUserName":{"text":"gh_8f47ec7c055d","attrs":{},"child":{}},"FromUserName":{"text":"o7fAGj-j4y-Ey5nvTTE1Z9wwyCY4","attrs":{},"child":{}},"CreateTime":{"text":"1362986469","attrs":{},"child":{}},"MsgType":{"text":"text","attrs":{},"child":{}},"Content":{"text":"朝阳区天气","attrs":{},"child":{}},"MsgId":{"text":"5853982309245517843","attrs":{},"child":{}}}}}	
+2013-03-20 11:37:04	POST	/?nonce=test&timestamp=1363750624359&signature=394879e6e8b691f03d108d36eea9e5e30074b4f1	200	<xml><ToUserName><![CDATA[o7fAGj-j4y-Ey5nvTTE1Z9wwyCY4]]></ToUserName><FromUserName><![CDATA[gh_8f47ec7c055d]]></FromUserName><CreateTime>1363750624562</CreateTime><MsgType><![CDATA[text]]></MsgType><Content><![CDATA[查到多个相同的信息:[北京朝阳,辽宁朝阳]，请输入更精确的信息查询，如：北京朝阳 或 辽宁朝阳]]></Content><FuncFlag>0</FuncFlag></xml>	
+2013-03-20 11:38:29	POST	/?nonce=test&timestamp=1363750708859&signature=2cc54840e1be55513ccf49d9f61157690d5eed54	
+2013-03-20 11:38:29	POST_XML	<xml><ToUserName><![CDATA[gh_8f47ec7c055d]]></ToUserName>
+<FromUserName><![CDATA[o7fAGj-j4y-Ey5nvTTE1Z9wwyCY4]]></FromUserName>
+<CreateTime>1362986469</CreateTime>
+<MsgType><![CDATA[text]]></MsgType>
+<Content><![CDATA[朝阳区天气]]></Content>
+<MsgId>5853982309245517843</MsgId>
+</xml>	{"xml":{"text":"","attrs":{},"child":{"ToUserName":{"text":"gh_8f47ec7c055d","attrs":{},"child":{}},"FromUserName":{"text":"o7fAGj-j4y-Ey5nvTTE1Z9wwyCY4","attrs":{},"child":{}},"CreateTime":{"text":"1362986469","attrs":{},"child":{}},"MsgType":{"text":"text","attrs":{},"child":{}},"Content":{"text":"朝阳区天气","attrs":{},"child":{}},"MsgId":{"text":"5853982309245517843","attrs":{},"child":{}}}}}	
+2013-03-20 11:38:29	POST	/?nonce=test&timestamp=1363750708859&signature=2cc54840e1be55513ccf49d9f61157690d5eed54	200	<xml><ToUserName><![CDATA[o7fAGj-j4y-Ey5nvTTE1Z9wwyCY4]]></ToUserName><FromUserName><![CDATA[gh_8f47ec7c055d]]></FromUserName><CreateTime>1363750709171</CreateTime><MsgType><![CDATA[text]]></MsgType><Content><![CDATA[北京朝阳 
+今天： 8℃~0℃ 多云 微风 
+明天: 14℃~4℃ 多云转晴 微风转北风3-4级
+温馨提示：天气冷，建议着棉服、羽绒服、皮夹克加羊毛衫等冬季服装。年老体弱者宜着厚棉衣、冬大衣或厚羽绒服。
+(ps:以上信息仅供参考，请以<a href='http://www.weather.com.cn/weather/101010300.shtml'>天气网</a>信息为准！)]]></Content><FuncFlag>0</FuncFlag></xml>	
+2013-03-20 11:39:27	POST	/?nonce=test&timestamp=1363750767750&signature=6300a22aa265b6334947588de4c6ef635ff3a7ab	
+2013-03-20 11:39:27	POST_XML	<xml><ToUserName><![CDATA[gh_8f47ec7c055d]]></ToUserName>
+<FromUserName><![CDATA[o7fAGj-j4y-Ey5nvTTE1Z9wwyCY4]]></FromUserName>
+<CreateTime>1362986469</CreateTime>
+<MsgType><![CDATA[text]]></MsgType>
+<Content><![CDATA[朝阳区天气]]></Content>
+<MsgId>5853982309245517843</MsgId>
+</xml>	{"xml":{"text":"","attrs":{},"child":{"ToUserName":{"text":"gh_8f47ec7c055d","attrs":{},"child":{}},"FromUserName":{"text":"o7fAGj-j4y-Ey5nvTTE1Z9wwyCY4","attrs":{},"child":{}},"CreateTime":{"text":"1362986469","attrs":{},"child":{}},"MsgType":{"text":"text","attrs":{},"child":{}},"Content":{"text":"朝阳区天气","attrs":{},"child":{}},"MsgId":{"text":"5853982309245517843","attrs":{},"child":{}}}}}	
+2013-03-20 11:39:28	POST	/?nonce=test&timestamp=1363750767750&signature=6300a22aa265b6334947588de4c6ef635ff3a7ab	200	<xml><ToUserName><![CDATA[o7fAGj-j4y-Ey5nvTTE1Z9wwyCY4]]></ToUserName><FromUserName><![CDATA[gh_8f47ec7c055d]]></FromUserName><CreateTime>1363750768125</CreateTime><MsgType><![CDATA[text]]></MsgType><Content><![CDATA[北京朝阳 
+今天： 8℃~0℃ 多云 微风 
+明天: 14℃~4℃ 多云转晴 微风转北风3-4级
+温馨提示：天气冷，建议着棉服、羽绒服、皮夹克加羊毛衫等冬季服装。年老体弱者宜着厚棉衣、冬大衣或厚羽绒服。
+(ps:以上信息仅供参考，请以<a href='http://www.weather.com.cn/weather/101010300.shtml'>天气网</a>信息为准！)]]></Content><FuncFlag>0</FuncFlag></xml>	
