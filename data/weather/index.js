@@ -4,16 +4,30 @@ var firstLetter = require('util/chineseFirstLetter');
 var DIC_PATH = './cache/';
 var EXT_CATCH_FILE = '.json';
 
+//正则表达式
+var RE_SPECIAL_CITY = /北京|天津|上海|重庆/;
+var RE_PROVINCE = /省|(北京|上海|天津|重庆)市?/;
+var RE_CITY = /市/;
+var RE_COUNTRY = /[区县]/;
+var RE_KEYWORDS_FILTER = /[省市区]|自治区/;
+
+//城市等级
+var LEVEL_PROVINCE = 1;
+var LEVEL_CITY = 2;
+var LEVEL_COUNTRY = 3;
+
 /*定义工具方法*/
 (function(){
 	var _toString = Object.prototype.toString;
+	//isArray isObject
 	['Array','Object'].forEach(function(v){
 		global['is'+v] = function(a){
 			return _toString.call(a) == '[object '+v+']';
 		}
 	});
+	//得到天气数据的城市名
 	global['getCityName'] = function(v){
-		return (v.parent||'').replace('-','').replace(v.name,'') + v.name+(v.l == LEVEL_PROVINCE ? '省' : '');//这里的加“省”提示，只针对“海南”
+		return (v.parent||'').replace('-','').replace(v.name,'') + v.name+(v.l == LEVEL_PROVINCE && !RE_SPECIAL_CITY.test(v.name) ? '省' : '');//这里的加“省”提示，只针对“海南”
 	}
 })();
 
@@ -22,15 +36,13 @@ var segment = new Segment();
 // 使用默认的识别模块及字典
 segment.useDefaltNoDictOptimizer();
 
-var LEVEL_PROVINCE = 1;
-var LEVEL_CITY = 2;
-var LEVEL_COUNTRY = 3;
-//根据关键词得到天气网城市码
+
+/*根据关键词得到天气网城市码*/
 function getAreaCode(keyWords){
 	var result = [];
 	var keyWords = _parseKeywords(keyWords);
 	keyWords.forEach(function(v,i){
-		var keyWord = v.name.replace(/[省市区]|自治区/,'');
+		var keyWord = v.name.replace(RE_KEYWORDS_FILTER,'');
 		if(keyWord.length < 5){//关键字数太多舍弃
 			var dic = require(DIC_PATH+firstLetter.convert(keyWord.charAt(0))+EXT_CATCH_FILE);
 			var cityInfo = dic[keyWord];//console.log(keyWord,cityInfo);
@@ -59,7 +71,7 @@ function getAreaCode(keyWords){
 		}else{
 			//当关键词数和结果数不一致时，说明出现了如：朝阳　的查询结果，应把第三级（即“北京朝阳”）的数据去掉
 			if(sortArr.length > keyWords.length && keyWords.length == 2){
-				if(/北京|天津|上海|重庆/.test(keyWords[0].name)){
+				if(RE_SPECIAL_CITY.test(keyWords[0].name)){
 					sortArr.splice(1,1);
 				}else{
 					sortArr.pop();
@@ -87,6 +99,7 @@ function getAreaCode(keyWords){
 	result = _optimizeAreaCode(result,keyWords);
 	return result;
 }
+/*分析关键词*/
 function _parseKeywords(keyWords){
 	var result = [];
 	keyWords = isArray(keyWords) ? keyWords : segment.doSegment(keyWords).map(function(v,i){
@@ -95,11 +108,11 @@ function _parseKeywords(keyWords){
 	keyWords.forEach(function(v,i){
 		var level = 0;
 		//由于分词时没有合并词优化，先不考虑“自治区”
-		if(/省|(北京|上海|天津|重庆)市?/.test(v)){
+		if(RE_PROVINCE.test(v)){
 			level = LEVEL_PROVINCE;
-		}else if(/[市]/.test(v)){
+		}else if(RE_CITY.test(v)){
 			level = LEVEL_CITY;
-		}else if(/[区县]/.test(v)){
+		}else if(RE_COUNTRY.test(v)){
 			level = LEVEL_COUNTRY;
 		}
 		keyWords[i] = {name:v,level:level};
@@ -109,6 +122,7 @@ function _parseKeywords(keyWords){
 	});
 	return keyWords;
 }
+/*优化得到的城市地区码信息(根据输入的关键词等级)*/
 function _optimizeAreaCode(areaCode,keyWords){
 	//目前测试数据，只优化关键词为一个，且结果有两个的，如：海南
 	if(keyWords.length == 1 && areaCode.length > 1){
@@ -125,6 +139,7 @@ function _optimizeAreaCode(areaCode,keyWords){
 	}
 	return areaCode;
 }
+/*发请求*/
 function _request(url,callback){
 	http.get(url,function(res){
 		var message = '';
@@ -139,6 +154,7 @@ function _request(url,callback){
 		callback && callback(err);
 	})	
 }
+/*根据经纬度得到天气信息*/
 function getWeatherByLocation (location,callback){//纬度,经度 lat,lng
 	_request('http://api.map.baidu.com/geocoder?location='+location+'&output=json',function(err,message){
 		var baiduResult = JSON.parse(message);
@@ -151,6 +167,7 @@ function getWeatherByLocation (location,callback){//纬度,经度 lat,lng
 		}
 	});
 }
+/*分析得到的天气城市码*/
 function _parseCode(code,callback){
 	if(code){
 		if(code.length == 1){
@@ -166,11 +183,12 @@ function _parseCode(code,callback){
 		callback && callback({msg:"我没有找到你要查询的地区信息"})
 	}
 }
-
+/*根据关键词得到天气信息*/
 function getWeatherByCityName(cityName,callback){
 	var code = getAreaCode(cityName);
 	_parseCode(code,callback);
 }
+/*根据天气城市码得到天气信息，areaCode为内部得到的对象，也可以为城市码字符串*/
 function getWeatherByCode(areaCode,callback){
 	var _tempAreaCode = areaCode;
 	if(/^\d{9}$/.test(areaCode) || isObject(_tempAreaCode) && (areaCode = _tempAreaCode.id)){
