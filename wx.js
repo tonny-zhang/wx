@@ -127,10 +127,16 @@ wxProp._parseWeatherResult = function(err,weatherInfo,callback){
 wxProp.parseLocation = function(callback){
 	var _this = this;
 	var root = _this.root;
-	var location = [root.Location_X.text,root.Location_Y.text].join();
-	weather.getWeatherByLocation(location,function(err,weatherInfo){
+	var fn = function(err,weatherInfo){
 		_this._parseWeatherResult(err,weatherInfo,callback);
-	})
+	}
+	if(root.Label){
+		var keyword = root.Label.text.split(' ')[0].replace(/中国/,'');//过滤中国和后面的邮编
+		//有关键词时用CPU资源去换取抓取百度数据的网络传输时间
+		weather.getWeatherByCityName(keyword,fn);
+	}else{
+		weather.getWeatherByLocation([root.Location_X.text,root.Location_Y.text].join(),fn);
+	}
 }
 wxProp.parseEvent = function(){
 

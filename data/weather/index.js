@@ -11,6 +11,8 @@ var RE_CITY = /市/;
 var RE_COUNTRY = /[区县]/;
 var RE_KEYWORDS_FILTER = /[省市区]|自治区/;
 
+var RE_IS_LETTER = /\w+/;
+
 //城市等级
 var LEVEL_PROVINCE = 1;
 var LEVEL_CITY = 2;
@@ -40,18 +42,26 @@ segment.useDefaltNoDictOptimizer();
 /*根据关键词得到天气网城市码*/
 function getAreaCode(keyWords){
 	var result = [];
-	var keyWords = _parseKeywords(keyWords);
-	keyWords.forEach(function(v,i){
+	var _tempKeyWords = _parseKeywords(keyWords);
+	keyWords = [];
+	_tempKeyWords.forEach(function(v,i){
 		var keyWord = v.name.replace(RE_KEYWORDS_FILTER,'');
 		if(keyWord.length < 5){//关键字数太多舍弃
-			var dic = require(DIC_PATH+firstLetter.convert(keyWord.charAt(0))+EXT_CATCH_FILE);
-			var cityInfo = dic[keyWord];//console.log(keyWord,cityInfo);
-			if(cityInfo){
-				cityInfo.forEach(function(v,i){
-					v.name = keyWord;
-					cityInfo[i] = v;
-				})
-				result.push.apply(result,cityInfo);
+			var fileName = firstLetter.convert(keyWord.charAt(0));
+			if(RE_IS_LETTER.test(fileName)){
+				//防止没有数据文件
+				try{
+					var dic = require(DIC_PATH+fileName+EXT_CATCH_FILE);
+					var cityInfo = dic[keyWord];//console.log(keyWord,cityInfo);
+					if(cityInfo){
+						keyWords.push(keyWord);//重新记录有效关键词
+						cityInfo.forEach(function(v,i){
+							v.name = keyWord;
+							cityInfo[i] = v;
+						})
+						result.push.apply(result,cityInfo);
+					}
+				}catch(e){}
 			}
 		}
 	});
@@ -60,6 +70,7 @@ function getAreaCode(keyWords){
 		result.forEach(function(v,i){
 			sortArr[v.l-1].push(v);
 		});
+		//过滤没有数据的等级数组
 		sortArr = sortArr.filter(function(v,i){
 			if( v.length > 0 ){
 				return v;
@@ -71,7 +82,12 @@ function getAreaCode(keyWords){
 		}else{
 			//当关键词数和结果数不一致时，说明出现了如：朝阳　的查询结果，应把第三级（即“北京朝阳”）的数据去掉
 			if(sortArr.length > keyWords.length && keyWords.length == 2){
-				if(RE_SPECIAL_CITY.test(keyWords[0].name)){
+				//关键词中有直连辖市
+				if(keyWords.some(function(v,i){
+					if(RE_SPECIAL_CITY.test(v)){
+						return true;
+					}
+				})){
 					sortArr.splice(1,1);
 				}else{
 					sortArr.pop();
@@ -219,11 +235,12 @@ if(process.argv[1] == __filename){
 	// console.log(_parseKeywords('朝阳区'));
 	// console.log(_parseKeywords('朝阳市辽宁省'));
 	// console.log(_parseKeywords('内蒙古'));
+	// console.log(_parseKeywords('中国北京市朝阳区红军营南路 邮政编码: 100107'.split(' ')[0].replace(/中国/,'')));
 
-	console.log(getAreaCode('北京'));
-	console.log(getAreaCode('北京朝阳'));
-	console.log(getAreaCode('辽宁朝阳'));
-	console.log(getAreaCode('朝阳'));
+	// console.log(getAreaCode('北京'));
+	// console.log(getAreaCode('北京朝阳'));
+	// console.log(getAreaCode('辽宁朝阳'));
+	// console.log(getAreaCode('朝阳'));
 	// console.log(getAreaCode('河北'));
 	// console.log(getAreaCode('河北邯郸'));
 	// console.log(getAreaCode('邯郸'));
@@ -236,4 +253,5 @@ if(process.argv[1] == __filename){
 	// console.log(getAreaCode('海南省'));
 	// console.log(getAreaCode('海口'));
 	// console.log(getAreaCode('河北邯郸磁县'));
+	console.log(getAreaCode('中国北京市朝阳区红军营南路 邮政编码: 100107'/*.split(' ')[0].replace(/中国/,'')*/));
 }
