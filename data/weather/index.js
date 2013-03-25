@@ -84,7 +84,7 @@ function getAreaCode(keyWords){
 			if(sortArr.length > keyWords.length && keyWords.length == 2){
 				//关键词中有直连辖市
 				if(keyWords.some(function(v,i){
-					if(RE_SPECIAL_CITY.test(v)){
+					if(RE_SPECIAL_CITY.test(v.name)){
 						return true;
 					}
 				})){
