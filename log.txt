@@ -94,3 +94,16 @@
 明天: 14℃~4℃ 多云转晴 微风转北风3-4级
 温馨提示：天气冷，建议着棉服、羽绒服、皮夹克加羊毛衫等冬季服装。年老体弱者宜着厚棉衣、冬大衣或厚羽绒服。
 (ps:以上信息仅供参考，请以<a href='http://www.weather.com.cn/weather/101010300.shtml'>天气网</a>信息为准！)]]></Content><FuncFlag>0</FuncFlag></xml>	
+2013-03-20 11:42:30	POST	/?nonce=test&timestamp=1363750950438&signature=de7611d0c323092688ba9bae6ac02388d53133ed	
+2013-03-20 11:42:30	POST_XML	<xml><ToUserName><![CDATA[gh_8f47ec7c055d]]></ToUserName>
+<FromUserName><![CDATA[o7fAGj-j4y-Ey5nvTTE1Z9wwyCY4]]></FromUserName>
+<CreateTime>1362986469</CreateTime>
+<MsgType><![CDATA[text]]></MsgType>
+<Content><![CDATA[河南信阳天气]]></Content>
+<MsgId>5853982309245517843</MsgId>
+</xml>	{"xml":{"text":"","attrs":{},"child":{"ToUserName":{"text":"gh_8f47ec7c055d","attrs":{},"child":{}},"FromUserName":{"text":"o7fAGj-j4y-Ey5nvTTE1Z9wwyCY4","attrs":{},"child":{}},"CreateTime":{"text":"1362986469","attrs":{},"child":{}},"MsgType":{"text":"text","attrs":{},"child":{}},"Content":{"text":"河南信阳天气","attrs":{},"child":{}},"MsgId":{"text":"5853982309245517843","attrs":{},"child":{}}}}}	
+2013-03-20 11:42:30	POST	/?nonce=test&timestamp=1363750950438&signature=de7611d0c323092688ba9bae6ac02388d53133ed	200	<xml><ToUserName><![CDATA[o7fAGj-j4y-Ey5nvTTE1Z9wwyCY4]]></ToUserName><FromUserName><![CDATA[gh_8f47ec7c055d]]></FromUserName><CreateTime>1363750950797</CreateTime><MsgType><![CDATA[text]]></MsgType><Content><![CDATA[河南信阳 
+今天： 14℃~7℃ 晴 微风 
+明天: 19℃~13℃ 晴 微风
+温馨提示：建议着薄外套、开衫牛仔衫裤等服装。年老体弱者应适当添加衣物，宜着夹克衫、薄毛衣等。
+(ps:以上信息仅供参考，请以<a href='http://www.weather.com.cn/weather/101180601.shtml'>天气网</a>信息为准！)]]></Content><FuncFlag>0</FuncFlag></xml>	
