@@ -130,8 +130,9 @@ wxProp.parseLocation = function(callback){
 	var fn = function(err,weatherInfo){
 		_this._parseWeatherResult(err,weatherInfo,callback);
 	}
-	if(root.Label){
-		var keyword = root.Label.text.split(' ')[0].replace(/中国/,'');//过滤中国和后面的邮编
+	var label = root.Label && root.Label.text.replace(/^\s+|\s+$/g,'');
+	if(label){
+		var keyword = label.split(' ')[0].replace(/中国/,'');//过滤中国和后面的邮编
 		//有关键词时用CPU资源去换取抓取百度数据的网络传输时间
 		weather.getWeatherByCityName(keyword,fn);
 	}else{
