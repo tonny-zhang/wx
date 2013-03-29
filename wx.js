@@ -62,6 +62,7 @@ wxProp.linkTmpl = function(info){
 wxProp.parseText = function(callback){
 	var _this = this;
 	var content = this.root.Content.text;
+	content || (content = content.replace(/^\s+|\s+$/,''));
 	var replyContent = '';
 	switch(content){
 		case 'Hello2BizUser':
@@ -73,7 +74,7 @@ wxProp.parseText = function(callback){
 		case '天气':
 		case 'tq':
 		case 'TQ':
-			replyContent = helper.weather;
+			replyContent = helper.noKeywords;
 			break;
 		default :
 			var match;

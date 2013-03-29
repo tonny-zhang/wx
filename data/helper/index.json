@@ -2,7 +2,6 @@
 	"welcome": "热烈欢迎",
 	"help":"温馨提示：\n1.h[help] 得到帮助信息\n2.天气[tq|TQ] 查询天气情况,如：北京天气\n3.直接发送位置(工具栏加号添加)查询天气",
 	"weather": "__weatherInfo__\n温馨提示：__weatherNotice__\n(ps:以上信息仅供参考，请以<a href='http://www.weather.com.cn/weather/__areaCode__.shtml'>天气网</a>信息为准！)",
-	"noKeywords": "请输入要查询天气的城市,如：北京,北京天气",
+	"noKeywords": "请输入要查询天气的城市,如：北京天气",
 	"noMeaning": "您输入的「__content__」我不知道什么意思,下面的信息可能会帮到您"
-
 }
