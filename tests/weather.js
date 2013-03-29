@@ -29,6 +29,7 @@ var compare = require('util/compare').compare;
 	global.getArea = getArea;
 })();
 
+rewriteAllCodeCache();
 getArea('北京',[ { id: '101010100', l: 1, parent: '北京', name: '北京' } ]);
 getArea('北京市朝阳区',[ { id: '101010300', l: 3, parent: '北京', name: '朝阳' } ]);
 getArea('辽宁朝阳', [ { id: '101071201', l: 2, parent: '辽宁', name: '朝阳' } ]);
@@ -46,4 +47,5 @@ getArea('海南省',[ {id: '101310101', l: 1, name: '海南' } ]);
 getArea('海口', [ { id: '101310101', l: 3, parent: '海南', name: '海口' } ]);
 getArea('河北邯郸磁县',[ { id: '101091007', l: 3, parent: '河北-邯郸', name: '磁县' } ]);
 getArea('中国北京市朝阳区红军营南路 邮政编码: 100107',[ { id: '101010300', l: 3, parent: '北京', name: '朝阳' } ]);
+getArea('错误地址',[]);
 end();

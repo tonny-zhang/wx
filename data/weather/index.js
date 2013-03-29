@@ -1,8 +1,12 @@
 var http = require('http');
+var fs = require('fs');
 var Segment = require('node-segment').Segment;
 var firstLetter = require('util/chineseFirstLetter');
-var DIC_PATH = './cache/';
+var helper = require('../helper');
+var DIC_PATH = __dirname+'/cache/';
 var EXT_CATCH_FILE = '.json';
+var WEATHER_CACHE_PATH = DIC_PATH+'weather_info/';
+var ALLCODE_CACHE_FILE = DIC_PATH + 'allCode' + EXT_CATCH_FILE;
 
 //正则表达式
 var RE_SPECIAL_CITY = /北京|天津|上海|重庆/;
@@ -185,7 +189,7 @@ function getWeatherByLocation (location,callback){//纬度,经度 lat,lng
 }
 /*分析得到的天气城市码*/
 function _parseCode(code,callback){
-	if(code){
+	if(code && isArray(code) && code.length > 0){
 		if(code.length == 1){
 			getWeatherByCode(code[0],callback);
 		}else{
@@ -193,10 +197,10 @@ function _parseCode(code,callback){
 			code.forEach(function(v,i){
 				replyInfo.push(getCityName(v));//这里的加“省”提示，只针对“海南”
 			});
-			callback && callback({code:code,msg:"查到多个相同的信息:["+replyInfo.join()+"]，请输入更精确的信息查询，如："+replyInfo.join(' 或 ')})
+			callback && callback({code:code,msg:helper.manyResults.replace('__manyInfo__',replyInfo.join()).replace('__exampleInfo__',replyInfo.join(' 或 '))})
 		}
 	}else{
-		callback && callback({msg:"我没有找到你要查询的地区信息"})
+		callback && callback({msg:helper.noSearchResult})
 	}
 }
 /*根据关键词得到天气信息*/
@@ -206,26 +210,47 @@ function getWeatherByCityName(cityName,callback){
 }
 /*根据天气城市码得到天气信息，areaCode为内部得到的对象，也可以为城市码字符串*/
 function getWeatherByCode(areaCode,callback){
+	callback || (callback = function(){});
 	var _tempAreaCode = areaCode;
 	if(/^\d{9}$/.test(areaCode) || isObject(_tempAreaCode) && (areaCode = _tempAreaCode.id)){
-		//http://data.weather.com.cn/forecast/101010100.html
-		_request('http://m.weather.com.cn/data/'+areaCode+'.html',function(err,message){
-			var weatherInfo = JSON.parse(message);
-			if(weatherInfo && weatherInfo.weatherinfo){
-				_tempAreaCode.name && (weatherInfo.weatherinfo.city = getCityName(_tempAreaCode));
-				callback && callback(null,weatherInfo.weatherinfo);
-			}else{
-				callback && callback(null,{msg:'no weather info'});
+		var cacheFileName = WEATHER_CACHE_PATH+areaCode+EXT_CATCH_FILE;
+		if(fs.existsSync(cacheFileName)){
+			if(+new Date() - fs.statSync(cacheFileName).mtime.getTime() < 1000*60*60*2){//缓存2小时
+				var weatherCacheInfo = require(cacheFileName);
 			}
-		})
+		}
+		if(weatherCacheInfo){
+			callback && callback(null,weatherCacheInfo);
+		}else{
+			//http://data.weather.com.cn/forecast/101010100.html
+			_request('http://m.weather.com.cn/data/'+areaCode+'.html',function(err,message){
+				if(!err){
+					try{
+						var weatherInfo = JSON.parse(message);
+						var info;
+						if(weatherInfo && (info = weatherInfo.weatherinfo)){
+							_tempAreaCode.name && (info.city = getCityName(_tempAreaCode));
+							callback(null,info);
+							fs.writeFileSync(cacheFileName,JSON.stringify(info));
+						}else{
+							callback({msg:'no weather info'});
+						}
+					}catch(e){
+						callback({msg:'parse weather info 501'});
+					}
+				}else{
+					callback({msg:'get weather info 502'});
+				}			
+			})
+		}
 	}else{
-		callback && callback(null,{msg:'Illegal areaCode when geting weather info'});
+		callback({msg:'Illegal areaCode when geting weather info'});
 	}
 }
 
 exports.getWeatherByLocation = getWeatherByLocation;
 exports.getWeatherByCityName = getWeatherByCityName;
-// exports.getWeatherByCode = getWeatherByCode;
+exports.getWeatherByCode = getWeatherByCode;
 exports.getAreaCode = getAreaCode
 
 if(process.argv[1] == __filename){
@@ -253,5 +278,5 @@ if(process.argv[1] == __filename){
 	// console.log(getAreaCode('海南省'));
 	// console.log(getAreaCode('海口'));
 	// console.log(getAreaCode('河北邯郸磁县'));
-	console.log(getAreaCode('中国北京市朝阳区红军营南路 邮政编码: 100107'/*.split(' ')[0].replace(/中国/,'')*/));
+	// console.log(getAreaCode('中国北京市朝阳区红军营南路 邮政编码: 100107'/*.split(' ')[0].replace(/中国/,'')*/));
 }

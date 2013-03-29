@@ -4,6 +4,7 @@ var convert = require('util/chineseFirstLetter').convert;
 var DIR_NAME = __dirname+'/';
 var cacheFileExt = '.json';
 var cachePath = DIR_NAME+'../cache/';
+var allCodeCache = cachePath + 'allCode' + cacheFileExt;
 
 var LEVEL_PROVINCE = 1;
 var LEVEL_CITY = 2;
@@ -89,6 +90,14 @@ function cityInfo2File(){
 	// 		fs.appendFileSync('./cache/'+convert(v.charAt(0))+'.data',v+'\r\n');
 	// 	})
 	// }
+	/*得到所有城市码，方便批量更新数据*/
+	function getCodeInfo(){
+		var arr = [];
+		for(var i in simpleInfo){
+			arr.push(simpleInfo[i][0].id);
+		}
+		fs.writeFileSync(allCodeCache,JSON.stringify(arr));
+	}
 	function info2SubFile(){
 		var letterInfo = {};
 		for(var i in simpleInfo){
@@ -151,8 +160,9 @@ function cityInfo2File(){
 					}
 				}
 			}
-			//fs.writeFile('./result.data',cityInfoArr.join('\r\n'));
+			getCodeInfo();
 			info2SubFile();
+			console.log('处理完成');
 		}
 	})
 }

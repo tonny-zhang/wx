@@ -67,6 +67,7 @@ wxProp.parseText = function(callback){
 	switch(content){
 		case 'Hello2BizUser':
 			replyContent = helper.welcome + '\n' + helper.help;
+			break;
 		case 'h':
 		case 'help':
 			replyContent = helper.help;
