@@ -13,5 +13,5 @@ git config alias.br branch
 .git/  
 Thumbs.db
 #文件夹需要以/结尾
-/log.txt
+/log*
 /data/weather/cache/weather_info/
