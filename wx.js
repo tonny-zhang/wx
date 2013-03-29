@@ -104,7 +104,7 @@ wxProp._parseWeatherResult = function(err,weatherInfo,callback){
 			callback && callback(err);
 		}
 	}else{
-		var weatherText = [weatherInfo.city,'\n今天：',weatherInfo.temp1,weatherInfo.weather1,weatherInfo.wind1,'\n明天:',weatherInfo.temp2,weatherInfo.weather2,weatherInfo.wind2].join(' ');
+		var weatherText = [weatherInfo.city,'\n',weatherInfo.date_y+' '+weatherInfo.week,'\n今天：',weatherInfo.temp1,weatherInfo.weather1,weatherInfo.wind1,'\n明天:',weatherInfo.temp2,weatherInfo.weather2,weatherInfo.wind2].join(' ');
 		if(callback){
 			if(WeiXin.showTag){
 				getTags(weatherInfo.cityid,function(err,infoArr){
