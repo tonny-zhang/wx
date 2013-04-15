@@ -83,7 +83,8 @@ http.createServer(function (req, res) {
 				});
 			}
 		}else{
-			response(200,'no weiXin');
+			var numCPUs = require('os').cpus().length;
+			response(200,'no weiXin'+numCPUs);
 		}
 	}
 }).listen(process.env.PORT || 5000, null);

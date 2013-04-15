@@ -64,32 +64,6 @@ function cityInfo2File(){
 		var obj = {id:id,l:level,parent:parent};
 		simpleInfo[name].push({id:id,l:level,parent:parent});
 	}
-	// function simple2Arr(){
-	// 	var arr = [];
-	// 	for(var i in simpleInfo){
-	// 		var info = simpleInfo[i];
-	// 		var temp = [i];
-	// 		if(info.length > 0){
-	// 			temp.push(info.length);
-	// 			var tempArr = [];
-	// 			for(var a = 0,j=info.length;a<j;a++){
-	// 				var _tempInfo = info[a];
-	// 				tempArr.push([_tempInfo.id,_tempInfo.parent].join('_'));
-	// 			}
-	// 			temp.push(tempArr.join());
-	// 		}
-	// 		arr.push(temp.join('\t'));
-	// 	}
-	// 	arr.sort();
-	// 	return arr;
-	// }
-	
-	// function info2SubFile1(){
-	// 	var arr = simple2Arr();
-	// 	arr.forEach(function(v,i){
-	// 		fs.appendFileSync('./cache/'+convert(v.charAt(0))+'.data',v+'\r\n');
-	// 	})
-	// }
 	/*得到所有城市码，方便批量更新数据*/
 	function getCodeInfo(){
 		var arr = [];
