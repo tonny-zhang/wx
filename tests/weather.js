@@ -29,7 +29,6 @@ var compare = require('util/compare').compare;
 	global.getArea = getArea;
 })();
 
-rewriteAllCodeCache();
 getArea('北京',[ { id: '101010100', l: 1, parent: '北京', name: '北京' } ]);
 getArea('北京市朝阳区',[ { id: '101010300', l: 3, parent: '北京', name: '朝阳' } ]);
 getArea('辽宁朝阳', [ { id: '101071201', l: 2, parent: '辽宁', name: '朝阳' } ]);

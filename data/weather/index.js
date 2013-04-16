@@ -208,6 +208,7 @@ function getWeatherByCityName(cityName,callback){
 	var code = getAreaCode(cityName);
 	_parseCode(code,callback);
 }
+// var GLOBAL_CACHE = {date:null,isCaching:false};
 /*根据天气城市码得到天气信息，areaCode为内部得到的对象，也可以为城市码字符串*/
 function getWeatherByCode(areaCode,callback){
 	callback || (callback = function(){});
@@ -219,6 +220,19 @@ function getWeatherByCode(areaCode,callback){
 				var weatherCacheInfo = require(cacheFileName);
 			}
 		}
+		// console.log(GLOBAL_CACHE);
+		// if(!GLOBAL_CACHE.isCaching){
+		// 	if(!GLOBAL_CACHE.date || +new Date() - GLOBAL_CACHE.date > 1000*60*60*2){
+		// 		GLOBAL_CACHE.isCaching = true;
+		// 		require('child_process').fork(__dirname+'/tool/story.js').on('message',function(){
+		// 			console.log(arguments);
+		// 			GLOBAL_CACHE.isCaching = false;
+		// 			GLOBAL_CACHE.date = +new Date();
+		// 			this.kill();
+		// 		});
+		// 	}
+		// }
+
 		if(weatherCacheInfo){
 			callback && callback(null,weatherCacheInfo);
 		}else{

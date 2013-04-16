@@ -83,8 +83,25 @@ http.createServer(function (req, res) {
 				});
 			}
 		}else{
-			var numCPUs = require('os').cpus().length;
-			response(200,'no weiXin'+numCPUs);
+			response(200,'no weiXin');
 		}
 	}
 }).listen(process.env.PORT || 5000, null);
+
+//生成全部数据缓存
+(function(){
+	var story = require('./data/weather/tool/story');
+	var delay = 0;//保证项目启动时生成一次缓存
+	var cacheStory = function(){
+		process.nextTick(function(){
+			setTimeout(function(){
+				if(!delay){
+					delay = 1000*60*60*2;//两个小时
+				}
+				story.rewriteAllCodeCache();
+				cacheStory();
+			},delay)
+		});
+	}
+	cacheStory();
+})();
