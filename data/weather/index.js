@@ -176,14 +176,19 @@ function _request(url,callback){
 }
 /*根据经纬度得到天气信息*/
 function getWeatherByLocation (location,callback){//纬度,经度 lat,lng
+	callback || (callback = new Function());
 	_request('http://api.map.baidu.com/geocoder?location='+location+'&output=json',function(err,message){
-		var baiduResult = JSON.parse(message);
-		if(baiduResult.status == 'OK'){
-			var result = baiduResult.result.addressComponent;
-			var code = getAreaCode([result.province,result.city,result.district]);
-			_parseCode(code,callback);
-		}else{
-			callback && callback({msg:'result error',status:baiduResult.status});
+		try{
+			var baiduResult = JSON.parse(message);
+			if(baiduResult.status == 'OK'){
+				var result = baiduResult.result.addressComponent;
+				var code = getAreaCode([result.province,result.city,result.district]);
+				_parseCode(code,callback);
+			}else{
+				callback({msg:'result error',status:baiduResult.status});
+			}
+		}catch(e){
+			callback({msg:'no map info',status:510});
 		}
 	});
 }
@@ -208,6 +213,35 @@ function getWeatherByCityName(cityName,callback){
 	var code = getAreaCode(cityName);
 	_parseCode(code,callback);
 }
+function isLegalCache(mtime){
+	var time = [6,12,18];
+	var nowHour = new Date().getHours();
+	var startTimeHour = time.filter(function(v){
+		return v < nowHour;
+	});
+	var startDate = new Date();
+	if(!startTimeHour){
+		startTimeHour = time[time.length - 1];
+		startDate.setDate(startDate.getDate() - 1);//前一天
+	}
+	startDate.setHours(startTimeHour);
+	startDate.setMinutes(30);
+	startDate.setSeconds(0);
+
+	var endTimeHour = time.filter(function(v){
+		return v > nowHour;
+	});
+	var endDate = new Date();
+	if(!endTimeHour){
+		endTimeHour = time[0];
+		endDate.setDate(startDate.getDate() + 1);//后一天
+	}
+	endDate.setHours(endTimeHour);
+	endDate.setMinutes(30);
+	endDate.setSeconds(0);
+
+	return (+startDate < mtime && mtime < +endDate);
+}
 // var GLOBAL_CACHE = {date:null,isCaching:false};
 /*根据天气城市码得到天气信息，areaCode为内部得到的对象，也可以为城市码字符串*/
 function getWeatherByCode(areaCode,callback){
@@ -216,23 +250,11 @@ function getWeatherByCode(areaCode,callback){
 	if(/^\d{9}$/.test(areaCode) || isObject(_tempAreaCode) && (areaCode = _tempAreaCode.id)){
 		var cacheFileName = WEATHER_CACHE_PATH+areaCode+EXT_CATCH_FILE;
 		if(fs.existsSync(cacheFileName)){
-			if(+new Date() - fs.statSync(cacheFileName).mtime.getTime() < 1000*60*60*2){//缓存2小时
+			//if(+new Date() - fs.statSync(cacheFileName).mtime.getTime() < 1000*60*60*2){//缓存2小时
+			if(isLegalCache(fs.statSync(cacheFileName).mtime.getTime())){
 				var weatherCacheInfo = require(cacheFileName);
 			}
 		}
-		// console.log(GLOBAL_CACHE);
-		// if(!GLOBAL_CACHE.isCaching){
-		// 	if(!GLOBAL_CACHE.date || +new Date() - GLOBAL_CACHE.date > 1000*60*60*2){
-		// 		GLOBAL_CACHE.isCaching = true;
-		// 		require('child_process').fork(__dirname+'/tool/story.js').on('message',function(){
-		// 			console.log(arguments);
-		// 			GLOBAL_CACHE.isCaching = false;
-		// 			GLOBAL_CACHE.date = +new Date();
-		// 			this.kill();
-		// 		});
-		// 	}
-		// }
-
 		if(weatherCacheInfo){
 			callback && callback(null,weatherCacheInfo);
 		}else{

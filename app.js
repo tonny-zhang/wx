@@ -90,18 +90,59 @@ http.createServer(function (req, res) {
 
 //生成全部数据缓存
 (function(){
-	var story = require('./data/weather/tool/story');
-	var delay = 0;//保证项目启动时生成一次缓存
-	var cacheStory = function(){
+	var child_process = require('child_process');
+	var time = [6,12,18];
+	var delay = 10;
+	function getDelay(){
+		var date = new Date();
+		var hours = date.getHours();
+		var closetHours = time.filter(function(v,i){
+			return v > hours;
+		});
+		var delayDate = new Date();
+		var delayHours = closetHours.shift();
+		if(!delayHours){
+			delayHours = time[0];
+			delayDate.setDate(delayDate.getDate()+1);//第二天的第一个时间
+		}
+		
+		delayDate.setHours(delayHours);
+		delayDate.setMinutes(30);
+		delayDate.setSeconds(0);
+		delay = delayDate.getTime() - date.getTime();
+	}
+	function run(){
 		process.nextTick(function(){
 			setTimeout(function(){
-				if(!delay){
-					delay = 1000*60*60*2;//两个小时
-				}
-				story.rewriteAllCodeCache();
-				cacheStory();
-			},delay)
+				log('cache all data');
+				child_process.fork('./data/weather/tool/story.js').on('message',function(){
+					getDelay();
+					log('cache all date complete,after '+delay+' milliseconds cache again!');
+					this.kill();
+					run();
+				})
+			},delay);
 		});
 	}
-	cacheStory();
+	run();
+	
+	// var haveMoreCpu = require('os').cpus() > 1;
+	// var delay = 0;//保证项目启动时生成一次缓存
+	// var cacheStory = function(){
+	// 	process.nextTick(function(){
+	// 		setTimeout(function(){
+	// 			if(!delay){
+	// 				delay = 1000*60*60*2;//两个小时
+	// 			}
+	// 			if(haveMoreCpu){
+
+	// 			}else{
+	// 				story.rewriteAllCodeCache();
+	// 			}
+				
+	// 			cacheStory();
+	// 		},delay)
+	// 	});
+	// }
+	// cacheStory();
 })();
