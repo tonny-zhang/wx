@@ -14,20 +14,30 @@ function _isStatic(reqUrl){
 }
 http.createServer(function (req, res) {
 	var response = function(code,resMsg,logMsg){
-		log(reqMethod,reqUrl,code,logMsg?'[ '+logMsg+' ]':(code != 200?resMsg:''));
+		log(reqMethod,code,reqUrl,logMsg?'[ '+logMsg+' ]':(code >= 500?resMsg:''));
 		res.writeHead(code,{'Content-Type':'text/html;charset=utf-8'});
 		res.end(resMsg);
 	}
 	var reqMethod = req.method.toUpperCase();
 	var reqUrl = req.url;
 	if(_isStatic(reqUrl)){
+		var res404 = function(){
+			response(404,'dont find this file,请查看<a href="http://github.com/tonny-zhang/wx">http://github.com/tonny-zhang/wx</a>');
+		}
 		if(/log\/\w+\.txt$/.test(reqUrl)){
-			fs.readFile('./'+reqUrl,function(err,data){
-				response(200,(err||data).toString());
-			});
+			var filePath = './'+reqUrl;
+			if(fs.existsSync(filePath)){
+				fs.readFile(filePath,function(err,data){
+					response(200,(err||data).toString());
+				});
+			}else{
+				res404();
+			}
 		}else if(/favicon\.ico/.test(reqUrl)){
 			//记录日志
 			response(200);
+		}else{
+			res404();
 		}
 	}else{
 		var params = url.parse(reqUrl,true).query;
