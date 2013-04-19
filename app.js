@@ -10,7 +10,7 @@ var fs = require('fs');
 process.env.TZ = 'Asia/Shanghai';
 //检测是否是静态文件，现在只支持txt|ico
 function _isStatic(reqUrl){
-	return /\.(txt|ico)$/.test(reqUrl);
+	return /\.(txt|ico|json)$/.test(reqUrl);
 }
 http.createServer(function (req, res) {
 	var response = function(code,resMsg,logMsg){
@@ -21,23 +21,13 @@ http.createServer(function (req, res) {
 	var reqMethod = req.method.toUpperCase();
 	var reqUrl = req.url;
 	if(_isStatic(reqUrl)){
-		var res404 = function(){
-			response(404,'dont find this file,请查看<a href="http://github.com/tonny-zhang/wx">http://github.com/tonny-zhang/wx</a>');
-		}
-		if(/log\/\w+\.txt$/.test(reqUrl)){
-			var filePath = './'+reqUrl;
-			if(fs.existsSync(filePath)){
-				fs.readFile(filePath,function(err,data){
-					response(200,(err||data).toString());
-				});
-			}else{
-				res404();
-			}
-		}else if(/favicon\.ico/.test(reqUrl)){
-			//记录日志
-			response(200);
+		var filePath = './'+reqUrl;
+		if(fs.existsSync(filePath)){
+			fs.readFile(filePath,function(err,data){
+				response(200,(err||data).toString());
+			});
 		}else{
-			res404();
+			response(404,'dont find this file,请查看<a href="http://github.com/tonny-zhang/wx">http://github.com/tonny-zhang/wx</a>');
 		}
 	}else{
 		var params = url.parse(reqUrl,true).query;
