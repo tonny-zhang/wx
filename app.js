@@ -4,26 +4,32 @@ var crypto = require('crypto');
 var xml = require("util/xml2json");
 var WeiXin = require('./wx');
 var log = require('util/logger').log;
+var sysLog = require('util/logger').print;
 var fs = require('fs');
 
 process.env.TZ = 'Asia/Shanghai';
+//检测是否是静态文件，现在只支持txt|ico
+function _isStatic(reqUrl){
+	return /\.(txt|ico)$/.test(reqUrl);
+}
 http.createServer(function (req, res) {
-	var response = function(code,msg){
-		log(reqMethod,reqUrl,code,msg);
+	var response = function(code,resMsg,logMsg){
+		log(reqMethod,reqUrl,code,logMsg?'[ '+logMsg+' ]':(code != 200?resMsg:''));
 		res.writeHead(code,{'Content-Type':'text/html;charset=utf-8'});
-		res.end(msg);
+		res.end(resMsg);
 	}
 	var reqMethod = req.method.toUpperCase();
 	var reqUrl = req.url;
-	if(/log\.txt/.test(reqUrl)){
-		fs.readFile('./log.txt',function(err,data){
-			response(200,(err||data).toString());
-		});
-	}else{
-		if(!/favicon\.ico/.test(reqUrl)){
+	if(_isStatic(reqUrl)){
+		if(/log\/\w+\.txt$/.test(reqUrl)){
+			fs.readFile('./'+reqUrl,function(err,data){
+				response(200,(err||data).toString());
+			});
+		}else if(/favicon\.ico/.test(reqUrl)){
 			//记录日志
-			log(reqMethod,reqUrl);
+			response(200);
 		}
+	}else{
 		var params = url.parse(reqUrl,true).query;
 		var sha1Str = [params.nonce,params.timestamp,'tonnyzhang'].sort().join('');
 
@@ -37,23 +43,22 @@ http.createServer(function (req, res) {
 				req.on('data',function(d){
 					message += d.toString();
 				}).on('end',function(){
-					var fn = function(err,msg){
-						if(err){
-							log('RES_XML',err);
-							response(500,JSON.stringify(err));
-						}else{
-							response(200,msg);
-						}
-					}
 					xml.parse2Json(message,function(err,result){
-						log('POST_XML',message,JSON.stringify(err||result));
+						var fn = function(err,msg){
+							var logMsg = ['POST_XML',message,JSON.stringify(err||result)].join(' _ ');
+							if(err){
+								response(500,JSON.stringify(err));
+							}else{
+								response(200,msg,logMsg);
+							}
+						}
 						if(!err){
 							var weiXin = new WeiXin(result);
 							var res_xml;
 							switch(result.xml.child.MsgType.text){
 								/*{"xml":{"ToUserName":"gh_8f47ec7c055d","FromUserName":"o7fAGj-j4y-Ey5nvTTE1Z9wwyCY4","CreateTime":"1363159184","MsgType":"text","Content":"Hello2BizUser","MsgId":"5854724114522046464"}}*/
 								case 'text'://Hello2BizUser[关注]
-									res_xml = weiXin.parseText(fn);
+									weiXin.parseText(fn);
 									return;
 									break;
 								case 'image':
@@ -72,7 +77,7 @@ http.createServer(function (req, res) {
 									break;
 								default:
 							}
-							res_xml || (res_xml = weiXin.textTmpl('这是一个测试'));
+							res_xml || (res_xml = weiXin.textTmpl('我正在学习'));
 							fn(null,res_xml);
 						}else{
 							response(500,'parse xml error!');
@@ -114,10 +119,10 @@ http.createServer(function (req, res) {
 	function run(){
 		process.nextTick(function(){
 			setTimeout(function(){
-				log('cache all data');
+				sysLog('cache all data');
 				child_process.fork('./data/weather/tool/story.js').on('message',function(){
 					getDelay();
-					log('cache all date complete,after '+delay+' milliseconds cache again!');
+					sysLog('cache all date complete,after '+delay+' milliseconds cache again!');
 					this.kill();
 					run();
 				})
@@ -125,24 +130,4 @@ http.createServer(function (req, res) {
 		});
 	}
 	run();
-	
-	// var haveMoreCpu = require('os').cpus() > 1;
-	// var delay = 0;//保证项目启动时生成一次缓存
-	// var cacheStory = function(){
-	// 	process.nextTick(function(){
-	// 		setTimeout(function(){
-	// 			if(!delay){
-	// 				delay = 1000*60*60*2;//两个小时
-	// 			}
-	// 			if(haveMoreCpu){
-
-	// 			}else{
-	// 				story.rewriteAllCodeCache();
-	// 			}
-				
-	// 			cacheStory();
-	// 		},delay)
-	// 	});
-	// }
-	// cacheStory();
 })();

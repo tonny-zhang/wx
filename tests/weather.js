@@ -1,5 +1,7 @@
 ﻿var weather = require('../data/weather');
 var compare = require('util/compare').compare;
+require('util/date');
+
 (function(){
 	global.test = function (name,excepted,testContent){
 		if(typeof testContent == 'function'){
@@ -23,10 +25,15 @@ var compare = require('util/compare').compare;
 	var parseKeyWords = function(keywords,excepted){
 		fn(keywords,excepted,'_parseKeywords');
 	}
+	var isLegalCache = function(date,excepted){//excepted默认为true
+		excepted == undefined && (excepted = true);
+		fn(date.format(),excepted,'_isLegalCache');
+	}
 	end = function(){
 		console.log(errorCount?'--------　X　有'+errorCount+'个错误　X　-------------------':'===============　√　全部通过　√　===============');
 	}
 	global.getArea = getArea;
+	global.isLegalCache = isLegalCache;
 })();
 
 getArea('北京',[ { id: '101010100', l: 1, parent: '北京', name: '北京' } ]);
@@ -47,4 +54,8 @@ getArea('海口', [ { id: '101310101', l: 3, parent: '海南', name: '海口' } 
 getArea('河北邯郸磁县',[ { id: '101091007', l: 3, parent: '河北-邯郸', name: '磁县' } ]);
 getArea('中国北京市朝阳区红军营南路 邮政编码: 100107',[ { id: '101010300', l: 3, parent: '北京', name: '朝阳' } ]);
 getArea('错误地址',[]);
+
+isLegalCache(new Date());
+isLegalCache(new Date('2010-10-30 12:30'),false);
+isLegalCache(new Date('2012-4-19 18:40'),false);
 end();

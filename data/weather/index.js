@@ -213,12 +213,14 @@ function getWeatherByCityName(cityName,callback){
 	var code = getAreaCode(cityName);
 	_parseCode(code,callback);
 }
-function isLegalCache(mtime){
+function _isLegalCache(mtime){
+	mtime = +new Date(mtime);//保证是毫秒数据
 	var time = [6,12,18];
 	var nowHour = new Date().getHours();
 	var startTimeHour = time.filter(function(v){
 		return v < nowHour;
 	});
+	startTimeHour = startTimeHour.pop();
 	var startDate = new Date();
 	if(!startTimeHour){
 		startTimeHour = time[time.length - 1];
@@ -231,6 +233,7 @@ function isLegalCache(mtime){
 	var endTimeHour = time.filter(function(v){
 		return v > nowHour;
 	});
+	endTimeHour = endTimeHour.shift();
 	var endDate = new Date();
 	if(!endTimeHour){
 		endTimeHour = time[0];
@@ -251,8 +254,11 @@ function getWeatherByCode(areaCode,callback){
 		var cacheFileName = WEATHER_CACHE_PATH+areaCode+EXT_CATCH_FILE;
 		if(fs.existsSync(cacheFileName)){
 			//if(+new Date() - fs.statSync(cacheFileName).mtime.getTime() < 1000*60*60*2){//缓存2小时
-			if(isLegalCache(fs.statSync(cacheFileName).mtime.getTime())){
-				var weatherCacheInfo = require(cacheFileName);
+			if(_isLegalCache(fs.statSync(cacheFileName).mtime.getTime())){
+				//防止缓存数据写不同步，造成的空数据
+				try{
+					var weatherCacheInfo = require(cacheFileName);
+				}catch(e){}				
 			}
 		}
 		if(weatherCacheInfo){
@@ -288,31 +294,4 @@ exports.getWeatherByLocation = getWeatherByLocation;
 exports.getWeatherByCityName = getWeatherByCityName;
 exports.getWeatherByCode = getWeatherByCode;
 exports.getAreaCode = getAreaCode
-
-if(process.argv[1] == __filename){
-	// console.log(_parseKeywords('北京市朝阳区'));
-	// console.log(_parseKeywords('朝阳区北京'));
-	// console.log(_parseKeywords('河北省邯郸市'));
-	// console.log(_parseKeywords('朝阳区'));
-	// console.log(_parseKeywords('朝阳市辽宁省'));
-	// console.log(_parseKeywords('内蒙古'));
-	// console.log(_parseKeywords('中国北京市朝阳区红军营南路 邮政编码: 100107'.split(' ')[0].replace(/中国/,'')));
-
-	// console.log(getAreaCode('北京'));
-	// console.log(getAreaCode('北京朝阳'));
-	// console.log(getAreaCode('辽宁朝阳'));
-	// console.log(getAreaCode('朝阳'));
-	// console.log(getAreaCode('河北'));
-	// console.log(getAreaCode('河北邯郸'));
-	// console.log(getAreaCode('邯郸'));
-	// console.log(getAreaCode('邯郸磁县'));
-	// console.log(getAreaCode('湖南'));
-	// console.log(getAreaCode('湖南tq'));
-	// console.log(getAreaCode('湖南tw'));
-	// console.log(getAreaCode('青海海南'));
-	// console.log(getAreaCode('海南'));
-	// console.log(getAreaCode('海南省'));
-	// console.log(getAreaCode('海口'));
-	// console.log(getAreaCode('河北邯郸磁县'));
-	// console.log(getAreaCode('中国北京市朝阳区红军营南路 邮政编码: 100107'/*.split(' ')[0].replace(/中国/,'')*/));
-}
+exports._isLegalCache = _isLegalCache;//用于测试

@@ -79,7 +79,7 @@ curlText('朝阳区天气');
 curlText('河南信阳天气');
 curlText('天气');
 curlText('天气士大夫');
-
+curlText('天气嘉义');
 
 curl('<xml><ToUserName><![CDATA[gh_8f47ec7c055d]]></ToUserName>'+
 		'<FromUserName><![CDATA[o7fAGj-j4y-Ey5nvTTE1Z9wwyCY4]]></FromUserName>'+
