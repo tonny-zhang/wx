@@ -6,11 +6,23 @@ var WeiXin = require('./wx');
 var log = require('util/logger').log;
 var sysLog = require('util/logger').print;
 var fs = require('fs');
+var staticFile = require('util/staticFile');
 
 process.env.TZ = 'Asia/Shanghai';
 //检测是否是静态文件，现在只支持txt|ico
 function _isStatic(reqUrl){
 	return /\.(txt|ico|json)$/.test(reqUrl);
+}
+function _isStaticDirc(reqUrl){
+	return /^\/(log|data)/.test(reqUrl);
+}
+function _isSign(reqUrl){
+	var params = url.parse(reqUrl,true).query;
+	var sha1Str = [params.nonce,params.timestamp,'tonnyzhang'].sort().join('');
+
+	var signature = crypto.createHash('sha1').update(sha1Str).digest('hex');
+	
+	return params.signature == signature;
 }
 http.createServer(function (req, res) {
 	var response = function(code,resMsg,logMsg){
@@ -19,23 +31,19 @@ http.createServer(function (req, res) {
 		res.end(resMsg);
 	}
 	var reqMethod = req.method.toUpperCase();
-	var reqUrl = req.url;
-	if(_isStatic(reqUrl)){
-		var filePath = './'+reqUrl;
-		if(fs.existsSync(filePath)){
-			fs.readFile(filePath,function(err,data){
-				response(200,(err||data).toString());
-			});
-		}else{
-			response(404,'dont find this file,请查看<a href="http://github.com/tonny-zhang/wx">http://github.com/tonny-zhang/wx</a>');
-		}
-	}else{
-		var params = url.parse(reqUrl,true).query;
-		var sha1Str = [params.nonce,params.timestamp,'tonnyzhang'].sort().join('');
+	var reqUrl = staticFile.formatPath(req.url);
 
-		var signature = crypto.createHash('sha1').update(sha1Str).digest('hex');
-		
-		if(params.signature == signature){
+	var params = url.parse(reqUrl,true).query;
+	var sha1Str = [params.nonce,params.timestamp,'tonnyzhang'].sort().join('');
+
+	var signature = crypto.createHash('sha1').update(sha1Str).digest('hex');
+	
+	var isSign = params.signature == signature;
+	if(reqMethod == 'GET' && _isStatic(reqUrl)|| !isSign){
+		var result = staticFile.parsePath(reqUrl);
+		response(result.state,result.html);	
+	}else{		
+		if(isSign){
 			if(reqMethod == 'GET'){
 				response(200,params.echostr);
 			}else{
