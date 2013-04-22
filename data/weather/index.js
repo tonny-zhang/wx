@@ -261,6 +261,7 @@ function getWeatherByCode(areaCode,callback){
 				//防止缓存数据写不同步，造成的空数据
 				try{
 					var weatherCacheInfo = require(cacheFileName);
+					_tempAreaCode.name && (weatherCacheInfo.city = getCityName(_tempAreaCode));
 				}catch(e){}				
 			}
 		}
@@ -276,7 +277,7 @@ function getWeatherByCode(areaCode,callback){
 						if(weatherInfo && (info = weatherInfo.weatherinfo)){
 							_tempAreaCode.name && (info.city = getCityName(_tempAreaCode));
 							callback(null,info);
-							fs.writeFileSync(cacheFileName,JSON.stringify(info));
+							fs.writeFileSync(cacheFileName,JSON.stringify(weatherInfo.weatherinfo));
 						}else{
 							callback({msg:'no weather info'});
 						}

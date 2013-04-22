@@ -64,41 +64,42 @@ var curlText = function(text){
 			parseJsonLog(err,response,text);
 		});
 }
-curlText('A');
-curlText('help');
-curlText('Hello2BizUser');
-curlText('中国北京市朝阳区红军营南路 邮政编码: 100107');
-curlText('中国北京市朝阳区红军营南路 邮政编码: 100107天气');
-curlText('tq');
-curlText('tq丰台区');
-curlText('tq朝阳');
-curlText('tq辽宁朝阳');
-curlText('tq海南');
-curlText('海南天气');
-curlText('朝阳区天气');
-curlText('河南信阳天气');
-curlText('天气');
-curlText('天气士大夫');
-curlText('天气嘉义');
+// curlText('A');
+// curlText('help');
+// curlText('Hello2BizUser');
+// curlText('中国北京市朝阳区红军营南路 邮政编码: 100107');
+// curlText('中国北京市朝阳区红军营南路 邮政编码: 100107天气');
+// curlText('tq');
+// curlText('tq丰台区');
+// curlText('tq朝阳');
+// curlText('tq辽宁朝阳');
+// curlText('tq海南');
+curlText('海口天气');
+// curlText('海南天气');
+// curlText('朝阳区天气');
+// curlText('河南信阳天气');
+// curlText('天气');
+// curlText('天气士大夫');
+// curlText('天气嘉义');
 
-curl('<xml><ToUserName><![CDATA[gh_8f47ec7c055d]]></ToUserName>'+
-		'<FromUserName><![CDATA[o7fAGj-j4y-Ey5nvTTE1Z9wwyCY4]]></FromUserName>'+
-		'<CreateTime>1363159225</CreateTime>'+
-		'<MsgType><![CDATA[location]]></MsgType>'+
-		'<Location_X>40.032572</Location_X>'+
-		'<Location_Y>116.417331</Location_Y>'+
-		'<Scale>15</Scale>'+
-		'<Label><![CDATA[中国北京市朝阳区红军营南路 邮政编码: 100107]]></Label>'+
-		'<MsgId>5854724290615705652</MsgId>'+
-		'</xml>',parseJsonLog);
+// curl('<xml><ToUserName><![CDATA[gh_8f47ec7c055d]]></ToUserName>'+
+// 		'<FromUserName><![CDATA[o7fAGj-j4y-Ey5nvTTE1Z9wwyCY4]]></FromUserName>'+
+// 		'<CreateTime>1363159225</CreateTime>'+
+// 		'<MsgType><![CDATA[location]]></MsgType>'+
+// 		'<Location_X>40.032572</Location_X>'+
+// 		'<Location_Y>116.417331</Location_Y>'+
+// 		'<Scale>15</Scale>'+
+// 		'<Label><![CDATA[中国北京市朝阳区红军营南路 邮政编码: 100107]]></Label>'+
+// 		'<MsgId>5854724290615705652</MsgId>'+
+// 		'</xml>',parseJsonLog);
 
-curl('<xml><ToUserName><![CDATA[gh_8f47ec7c055d]]></ToUserName>'+
-		'<FromUserName><![CDATA[o7fAGj-j4y-Ey5nvTTE1Z9wwyCY4]]></FromUserName>'+
-		'<CreateTime>1363159225</CreateTime>'+
-		'<MsgType><![CDATA[location]]></MsgType>'+
-		'<Location_X>40.032572</Location_X>'+
-		'<Location_Y>116.417331</Location_Y>'+
-		'<Scale>15</Scale>'+
-		'<Label><![CDATA[]]></Label>'+
-		'<MsgId>5854724290615705652</MsgId>'+
-		'</xml>',parseJsonLog);
+// curl('<xml><ToUserName><![CDATA[gh_8f47ec7c055d]]></ToUserName>'+
+// 		'<FromUserName><![CDATA[o7fAGj-j4y-Ey5nvTTE1Z9wwyCY4]]></FromUserName>'+
+// 		'<CreateTime>1363159225</CreateTime>'+
+// 		'<MsgType><![CDATA[location]]></MsgType>'+
+// 		'<Location_X>40.032572</Location_X>'+
+// 		'<Location_Y>116.417331</Location_Y>'+
+// 		'<Scale>15</Scale>'+
+// 		'<Label><![CDATA[]]></Label>'+
+// 		'<MsgId>5854724290615705652</MsgId>'+
+// 		'</xml>',parseJsonLog);
