@@ -68,7 +68,11 @@ function cityInfo2File(){
 	function getCodeInfo(){
 		var arr = [];
 		for(var i in simpleInfo){
-			arr.push(simpleInfo[i][0].id);
+			var temp = simpleInfo[i];
+			temp.forEach(function(v){
+				v.name = i;//保证生成的缓存城市名为全称
+				arr.push(v);
+			});
 		}
 		fs.writeFileSync(allCodeCache,JSON.stringify(arr));
 	}
