@@ -8,6 +8,9 @@ var EXT_CATCH_FILE = '.json';
 var WEATHER_CACHE_PATH = DIC_PATH+'weather_info/';
 var ALLCODE_CACHE_FILE = DIC_PATH + 'allCode' + EXT_CATCH_FILE;
 
+if(!fs.existsSync(WEATHER_CACHE_PATH)){
+	fs.mkdirSync(WEATHER_CACHE_PATH,0755);
+}
 //正则表达式
 var RE_SPECIAL_CITY = /北京|天津|上海|重庆/;
 var RE_PROVINCE = /省|(北京|上海|天津|重庆)市?/;
