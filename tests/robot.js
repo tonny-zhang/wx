@@ -35,7 +35,7 @@ function curl(sendStr,callback){
 	var req = http.request({
 		hostname: 'localhost',
 		port: 5000,
-		path: '/wx?nonce='+nonce+'&timestamp='+timestamp+'&signature='+signature,
+		path: '/?signature='+signature+'&timestamp='+timestamp+'&nonce='+nonce,
 		method: 'POST',
 		headers: {
 			"Content-Type": "text/xml"

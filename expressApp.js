@@ -47,7 +47,10 @@ var app = express();
 app.all('*',function(req,res,next){
 	res.charset = config.charset;
 	var pathname = req.path;
-	
+	//微信公众账号没法改这个地址，暂时这样处理
+	if(pathname === '/' && req.query.signature){
+		pathname += 'wx';
+	}
 	try{
 		/*模块需要实现run方法*/
 		var control = require(path.normalize(pathConst.CONTROL_PATH + pathname));
