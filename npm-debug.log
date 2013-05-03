@@ -1,0 +1,16 @@
+5317 error Error: read ECONNRESET
+5317 error     at errnoException (net.js:878:11)
+5317 error     at TCP.onread (net.js:539:19)
+5318 error If you need help, you may report this log at:
+5318 error     <http://github.com/isaacs/npm/issues>
+5318 error or email it to:
+5318 error     <npm-@googlegroups.com>
+5319 error System Windows_NT 5.1.2600
+5320 error command "d:\\Program Files\\nodejs\\node.exe" "d:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install"
+5321 error cwd f:\source\wx
+5322 error node -v v0.10.1
+5323 error npm -v 1.2.15
+5324 error syscall read
+5325 error code ECONNRESET
+5326 error errno ECONNRESET
+5327 verbose exit [ 1, true ]
