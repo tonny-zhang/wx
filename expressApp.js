@@ -23,8 +23,13 @@ var app = express();
 	
 	//app.use可以使用挂载功能
 	app.use((function(){
-		var accessLogPath = pathConst.APP_PATH+'/log/access.log';
+		var _dirLog = pathConst.APP_PATH+'/log';
+		if(!fs.existsSync(_dirLog)){
+			fs.mkdirSync(_dirLog,0755);
+		}
+		var accessLogPath = _dirLog+'/access.log';
 		fs.appendFileSync(accessLogPath,' server restart');
+		
 		return express.logger({stream:fs.createWriteStream(accessLogPath)});
 	})());
 	app.use(express.compress());
