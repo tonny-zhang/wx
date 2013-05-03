@@ -1,4 +1,11 @@
 {
 	 "timezone": "Asia/Shanghai"
 	,"charset": "utf8"
+	,"cookieSession": {
+		"secret": "test"
+	}
+	,"session": {
+		"key": "SESSIONID"
+		,"secret": "session"
+	}
 }
