@@ -9,11 +9,11 @@ function _isSign(params){
 	var sha1Str = [params.nonce,params.timestamp,wxConfig.token].sort().join('');
 
 	var signature = crypto.createHash('sha1').update(sha1Str).digest('hex');
-	info(sha1Str+' == '+signature);
+	info(params.signature+' == '+signature);
 	return params.signature == signature;
 }
 var info = function(msg){
-	fs.appendFileSync(path.join(__dirname,'info.log'),msg);
+	fs.appendFileSync(path.join(__dirname,'info.log'),msg+'\r\n');
 }
 exports.run = function(req,res,next){
 	var params = req.query;
