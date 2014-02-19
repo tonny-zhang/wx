@@ -4,7 +4,7 @@ var crypto = require('crypto')
 	, pathConst = require('../../config/path')
 	, wxConfig = require(pathConst.APP_PATH+'/config/wx')
 	, WeiXin = require(pathConst.APP_PATH+'/data/weixin');
-var fs = require('fs');
+var info = require('util/log').log;
 function _isSign(params){
 	var sha1Str = [params.nonce,params.timestamp,wxConfig.token].sort().join('');
 
@@ -12,9 +12,7 @@ function _isSign(params){
 	info(params.signature+' == '+signature);
 	return params.signature == signature;
 }
-var info = function(msg){
-	fs.appendFileSync(path.join(__dirname,'info.log'),msg+'\r\n');
-}
+
 exports.run = function(req,res,next){
 	var params = req.query;
 	if(_isSign(params)){

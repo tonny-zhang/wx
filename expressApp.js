@@ -2,7 +2,7 @@ var express = require('express')
   , http = require('http')
   , path = require('path')
   ,	fs = require('fs');
-
+var logUtil = require('util/log');
 var config = require('./config/global.json');
 var pathConst = require('./config/path.js');
 
@@ -69,7 +69,7 @@ app.all('*',function(req,res,next){
 	}
 });
 process.on('uncaughtException', function(err) {
-  fs.appendFileSync('./log/err.log','Caught exception: ' +err);
+  logUtil.error('Caught exception: ' +err);
 });
 http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));
