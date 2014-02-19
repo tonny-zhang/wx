@@ -4,12 +4,12 @@ var crypto = require('crypto')
 	, pathConst = require('../../config/path')
 	, wxConfig = require(pathConst.APP_PATH+'/config/wx')
 	, WeiXin = require(pathConst.APP_PATH+'/data/weixin');
-
+var fs = require('fs');
 function _isSign(params){
 	var sha1Str = [params.nonce,params.timestamp,wxConfig.token].sort().join('');
 
 	var signature = crypto.createHash('sha1').update(sha1Str).digest('hex');
-	
+	fs.appendFileSync('../../log/info.log',sha1Str+' == '+signature);
 	return params.signature == signature;
 }
 exports.run = function(req,res,next){
