@@ -9,8 +9,11 @@ function _isSign(params){
 	var sha1Str = [params.nonce,params.timestamp,wxConfig.token].sort().join('');
 
 	var signature = crypto.createHash('sha1').update(sha1Str).digest('hex');
-	fs.appendFileSync('../../log/info.log',sha1Str+' == '+signature);
+	info(sha1Str+' == '+signature);
 	return params.signature == signature;
+}
+var info = function(msg){
+	fs.appendFileSync(path.join(__dirname,'info.log'),msg);
 }
 exports.run = function(req,res,next){
 	var params = req.query;
@@ -21,6 +24,7 @@ exports.run = function(req,res,next){
 		}else if('POST' === method){
 			var fn = function(err,msg){
 				if(err){
+					info(JSON.stringify(err));
 					res.send(500,JSON.stringify(err));
 				}else{
 					res.send(msg);
