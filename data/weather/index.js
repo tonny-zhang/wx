@@ -268,8 +268,10 @@ function getWeatherByCode(areaCode,callback){
 		if(weatherCacheInfo){
 			callback && callback(null,weatherCacheInfo);
 		}else{
-			//http://data.weather.com.cn/forecast/101010100.html
-			_request('http://m.weather.com.cn/data/'+areaCode+'.html',function(err,message){
+			var weatherUrl = 'http://data.weather.com.cn/forecast/'+areaCode+'.html';
+			// var weatherUrl = 'http://m.weather.com.cn/data/'+areaCode+'.html';
+			//
+			_request(weatherUrl,function(err,message){
 				if(!err){
 					try{
 						var weatherInfo = JSON.parse(message);
